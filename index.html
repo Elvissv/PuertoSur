@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puerto Sur</title>
+    <link rel="stylesheet" href="styles/index.css">
+    
+    <script src="javaScripts/index.js" defer></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Oswald:wght@200..700&family=Press+Start+2P&family=Rubik+Wet+Paint&family=Rye&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container cloud-border">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html"> 
+                        <img src="imgs/logo_white_full.png" alt="PuertoSur Logo"> 
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li> 
+                    <li><a href="somos.html">Quiénes Somos</a></li> 
+                    <li><a href="index.html#siguenos">Síguenos</a></li> 
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                </ul>
+                <div class="navbar-search-section">
+                    <form class="search-form">
+                        <input class="search-input" type="search" placeholder="Buscar...">
+                        <button class="search-button" type="submit">Buscar</button>
+                    </form>
+                    <a href="productos.html" class="all-products-link">Todos los productos</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="welcome" class="Bienvenida carousel-container">
+            <div class="carousel-slide active" data-index="0">
+                <video autoplay loop muted playsinline class="media-background">
+                     <source src="videos/video_pres.mp4" type="video/mp4">
+                    Tu navegador no soporta el tag de video.
+                </video>
+            </div>
+            <div class="carousel-slide" data-index="1">
+                <img src="imgs/fondo1_ofc.png" alt="Imagen de bienvenida" class="media-background">
+            </div>
+            
+            <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
+        </section>
+
+        <section id="products">
+            <h2>Nuestros Productos</h2> 
+            <div class="product-grid-static"> 
+                <div class="product-card">
+                    <div class="image-container"> 
+                        <img src="imgs/muestras/camiseta_camo.png" alt="Camiseta Camo Petroleo">
+                    </div>
+                    <div class="card-content">
+                        <h3>Camiseta Camo Petroleo</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="imgs/muestras/parka_dama.png" alt="PARKA ARRAYAN DAMA HW">
+                    </div>
+                    <div class="card-content">
+                        <h3>PARKA ARRAYAN DAMA HW</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="imgs/muestras/parka_siberia.png" alt="Parka Siberia HW">
+                    </div>
+                    <div class="card-content">
+                        <h3>PARKA SIBERIA HW</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="imgs/muestras/pantalon_wolverine.png" alt="PANTALON WOLVERINE HW">
+                    </div>
+                    <div class="card-content">
+                        <h3>PANTALON WOLVERINE HW</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="imgs/muestras/chaqueta_intitucional.png" alt="SOFTSHELL THELMU INSTITUCIONAL">
+                    </div>
+                    <div class="card-content">
+                        <h3>SOFTSHELL THELMU INSTITUCIONAL</h3>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="image-container">
+                         <img src="imgs/muestras/zapatos.jpg" alt="ZAPATOS DE SEGURIDAD">
+                    </div>
+                    <div class="card-content">
+                        <h3>ZAPATOS DE SEGURIDAD</h3>
+                    </div>
+                </div>
+            </div> 
+        </section>
+
+        <section id="siguenos">
+            <h2>No te olvides de seguirnos!</h2>
+            <p>Mira más de nuestro trabajos, mantente al dia con nuestros productos y futuras ofertas en nuestras redes sociales.</p>
+            <div class="social-icons">
+                <a href="#" target="_blank"><img src="imgs/icons/fb.png" alt="Facebook"></a>
+                <a href="#" target="_blank"><img src="imgs/icons/ig.png" alt="Instagram"></a>
+                <a href="#" target="_blank"><img src="imgs/icons/wsp.png" alt="WhatsApp"></a>
+            </div>
+        </section>
+        
+    </main> 
+
+    <footer>
+        <p>2025 &copy; Todos los derechos Reservados &copy; Informaticones</p>
+    </footer>
+
+</body>
+</html>

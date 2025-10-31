@@ -1,0 +1,158 @@
+/* ========================
+   ESTILOS PÁGINA SOMOS.HTML
+   (Versión estable con animaciones CSS)
+========================= */
+
+.about-page-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    overflow: hidden; /* Para contener las animaciones */
+}
+
+/* --- Título Destacado --- */
+.about-page-container h2 {
+    text-align: center;
+    font-size: 2.5rem; /* Un poco más grande */
+    color: #2c3e50;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block; /* Para que la línea se ajuste al texto */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Línea decorativa debajo del título */
+.about-page-container h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background-color: #2371bb; /* El color azul de tu borde */
+    bottom: -10px;
+    left: 20%;
+}
+
+
+/* Contenedor para las dos columnas */
+.about-content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Espacio entre imagen y texto */
+}
+
+/* Columna de la imagen */
+.about-image {
+    flex: 1; /* Ocupa la mitad del espacio */
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15); /* Sombra más pronunciada */
+    transition: transform 0.3s ease;
+}
+.about-image img:hover {
+    transform: scale(1.03); /* Efecto de zoom suave */
+}
+
+/* Columna del texto */
+.about-text {
+    flex: 1.2; /* Ocupa un poco más de espacio */
+    text-align: left;
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+    animation: slideInRight 1s ease-out forwards;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+/* Hacemos que se apilen en vertical en móviles */
+@media (max-width: 768px) {
+    .about-content-wrapper {
+        flex-direction: column;
+    }
+    .about-text {
+        text-align: center; /* Centramos el texto en móvil */
+    }
+}
+
+
+/* --- Definición de las Animaciones --- */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* --- Sección 'Nuestros Pilares' --- */
+.our-values {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+    background-color: #ffffff; /* Fondo blanco para destacar */
+    border-radius: 10px;
+}
+
+.our-values h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.values-wrapper {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap; /* Para que se adapte en móvil */
+}
+
+.value-card {
+    flex-basis: 280px; /* Ancho base de cada tarjeta */
+    text-align: center;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    background: #fdfdfd;
+    transition: all 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.value-card h3 {
+    color: #2371bb;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.value-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}

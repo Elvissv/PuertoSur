@@ -1,0 +1,304 @@
+/* ========================
+   ESTILOS GENERALES 
+========================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* ========================
+   HEADER Y NAVEGACIÓN
+========================= */
+header {
+    background-color: #1a2a2a;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-container {
+    max-width: 1300px;
+    margin: 12px auto;
+    padding: 12px 22px;
+    background-color: #2c3e3e;
+    border: 3px dashed #e67e22;
+    border-radius: 60px 40px 60px 40px / 40px 60px 40px 60px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}    
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.logo img { 
+    height: 80px; 
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); 
+} 
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: #ecf0f1; font-size: 1rem; font-weight: 600; padding: 5px 10px; border-radius: 5px; transition: all 0.3s ease; }
+.nav-links a:hover, .nav-links a.active { color: #fff; background-color: #e67e22; }
+.navbar-search-section { display: flex; align-items: center; gap: 15px; }
+.search-form { display: flex; }
+.search-input { padding: 8px 12px; font-size: 0.9rem; border: 1px solid #e67e22; background-color: #3f5a5a; color: #ecf0f1; border-radius: 5px 0 0 5px; outline: none; transition: border-color 0.3s ease, background-color 0.3s ease; }
+.search-input::placeholder { color: #bbb; }
+.search-input:focus { border-color: #f39c12; background-color: #4a6a6a; }
+.search-button { padding: 8px 12px; font-size: 0.9rem; background-color: #e67e22; color: white; border: 1px solid #e67e22; border-radius: 0 5px 5px 0; cursor: pointer; transition: background-color 0.3s ease; }
+.search-button:hover { background-color: #f39c12; }
+.all-products-link { text-decoration: none; color: #ecf0f1; font-size: 0.9rem; font-weight: 600; padding: 8px 10px; border-radius: 5px; background-color: #3f5a5a; border: 1px solid #e67e22; transition: all 0.3s ease; }
+.all-products-link:hover { background-color: #4a6a6a; color: #fff; border-color: #f39c12; }
+
+/* ==============================================
+   SECCIÓN BIENVENIDA (CARRUSEL DE VIDEO E IMAGEN)
+============================================== */
+.Bienvenida.carousel-container { 
+    height: 80vh; 
+    padding: 0; 
+    margin-top: 0; 
+    position: relative; 
+    overflow: hidden; 
+    max-width: none; 
+}
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out; 
+    z-index: 1; 
+    /* Fondo negro para rellenar espacio si la imagen no cubre */
+    background-color: #000; 
+}
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2; 
+}
+
+/* --- ¡AQUÍ ESTÁ LA CORRECCIÓN! --- */
+
+/* 1. Estilos comunes para video E imagen */
+.media-background { 
+    width: 100%; 
+    height: 100%; 
+    object-position: center center; 
+}
+
+/* 2. Estilo SÓLO para el video */
+video.media-background {
+    object-fit: cover; /* El video SÍ cubre la pantalla */
+}
+
+/* 3. Estilo SÓLO para la imagen */
+img.media-background {
+    object-fit: contain; /* La imagen se "achica" (contiene) */
+}
+
+/* Botones del carrusel (sin cambios) */
+.carousel-btn { 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4); 
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 3; 
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+}
+.carousel-btn:hover { background-color: rgba(0, 0, 0, 0.7); }
+.carousel-btn.prev { left: 20px; }
+.carousel-btn.next { right: 20px; }
+
+
+/* ========================
+   SECCIÓN PRODUCTOS (Cuadrícula Estática)
+========================= */
+#products { 
+    background-color: #ffffff; 
+    padding-top: 80px;  
+    padding-bottom: 80px; 
+}
+#products h2 {
+    margin-bottom: 50px; 
+    color: #111; 
+    font-size: 2.2rem; 
+}
+.product-grid-static {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; 
+}
+.product-card { 
+    background: #f7f7f7; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    display: flex; 
+    flex-direction: column; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; 
+}
+.product-card:hover { 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    transform: translateY(-4px); 
+}
+.product-card .image-container {
+    height: 280px; 
+    overflow: hidden;
+    background-color: #fff; 
+}
+.product-card img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+    padding: 15px; 
+    transition: transform 0.4s ease; 
+}
+.product-card:hover img { 
+    transform: scale(1.06); 
+}
+.card-content { 
+    padding: 20px; 
+    color: #111; 
+    background-color: #f7f7f7; 
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    text-align: center; 
+}
+.card-content h3 { 
+    margin: 0; 
+    font-size: 1rem; 
+    line-height: 1.4; 
+    font-weight: 600; 
+    color: #333; 
+}
+
+/* ========================
+   SECCION SIGUENOS
+========================= */
+#siguenos { 
+    text-align: center; 
+    background-color: #2c3e3e; 
+    color: #ecf0f1; 
+    max-width: none; 
+    padding-top: 40px; 
+    padding-bottom: 40px; 
+    padding-left: 20px; 
+    padding-right: 20px;
+}
+#siguenos h2 { 
+    color: #fff; 
+    font-size: 2rem; 
+    margin-bottom: 10px; 
+}
+#siguenos p {
+    font-size: 1rem; 
+    margin-bottom: 25px; 
+}
+.social-icons { 
+    display: flex; 
+    justify-content: center; 
+    gap: 30px; 
+    margin-top: 0; 
+}
+.social-icons a { 
+    display: inline-block; 
+    transition: transform 0.3s ease; 
+}
+.social-icons a:hover { 
+    transform: scale(1.15); 
+}
+.social-icons img { 
+    width: 40px; 
+    height: 40px; 
+}
+
+/* ========================
+   FOOTER
+========================= */
+footer { 
+    background: #1c1c1c; 
+    color: #aaa; 
+    text-align: center; 
+    padding: 25px 20px; 
+    font-size: 0.9rem;
+}
+
+/* ========================
+   DISEÑO RESPONSIVO
+========================= */
+@media (max-width: 992px) { 
+    .product-grid-static {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) { 
+    header { position: sticky; background-color: #1a2a2a; }
+    .nav-container {
+        background-color: #2c3e3e; 
+        border-radius: 30px / 20px;
+        margin: 5px;
+        border: 2px dashed #e67e22; 
+    }
+    .navbar { flex-direction: column; gap: 20px; align-items: center; }
+    .navbar-search-section { width: 100%; justify-content: center; flex-wrap: wrap; }
+    .nav-links { justify-content: center; width: 100%; gap: 10px; }
+    .nav-links a { font-size: 0.9rem; }
+    
+    h2 { font-size: 2rem; }
+
+    /* Carrusel de Bienvenida Responsivo */
+    .Bienvenida.carousel-container { height: 60vh; } /* Más bajo en móvil */
+    .carousel-btn { padding: 10px 8px; font-size: 1.2rem; }
+}
+
+@media (max-width: 576px) { 
+    #products { padding-top: 40px; padding-bottom: 40px; }
+    #products h2 { font-size: 1.8rem; margin-bottom: 30px; }
+    .product-grid-static {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    .product-card .image-container {
+        height: 240px; 
+    }
+    .card-content h3 {
+        font-size: 0.9rem;
+    }
+}
