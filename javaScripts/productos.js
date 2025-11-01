@@ -24,15 +24,4 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     }
-
-    /* Añadimos la clase 'active-page-link' al botón "Todos los productos" 
-      del header para que se marque en azul.
-      Usamos una clase diferente a 'active' para no confundirla con el CSS del nav-links.
-    */
-    const allProductsLink = document.querySelector('.all-products-link');
-    if (allProductsLink) {
-        // Le añadimos la clase 'active' que definimos en 'productos.css'
-        allProductsLink.classList.add('active');
-    }
-
 });
