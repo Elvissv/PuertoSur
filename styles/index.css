@@ -35,27 +35,24 @@ section {
 }
 
 /* ========================
-   HEADER Y NAVEGACIÓN (FLOTANDO SOBRE EL HERO)
+   HEADER Y NAVEGACIÓN
 ========================= */
-.hero-header {
-    position: absolute; /* POSICIONAMIENTO ABSOLUTO DENTRO DEL HERO */
+header {
+    background-color: transparent;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    position: sticky; 
     top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100; /* Asegura que esté sobre el carrusel */
-    background-color: transparent; /* Fondo transparente */
-    box-shadow: none; /* Sin sombra para un look limpio */
+    z-index: 100;
 }
 
-/* ELIMINACIÓN DEL FONDO RECTANGULAR DEL CONTENEDOR DE NAVEGACIÓN */
+/* Contenedor del nav por defecto (oscuro, con borde) */
 .nav-container {
     max-width: 1300px;
     margin: 12px auto;
     padding: 12px 22px;
-    background-color: transparent; /* Fondo Transparente */
-    border: none; /* Borde Eliminado */
-    border-radius: 0; /* Radio de Esquina Eliminado */
-    box-shadow: none; /* Sombra Eliminada */
+    border: 3px dashed #000000;
+    border-radius: 60px 40px 60px 40px / 40px 60px 40px 60px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }    
 .navbar {
     display: flex;
@@ -65,83 +62,36 @@ section {
 }
 .logo img { 
     height: 80px; 
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)); /* Sombra para resaltar el logo */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3)); 
 } 
+
+/* Estilos de enlaces para el tema oscuro (perfectos como estaban) */
 .nav-links { display: flex; list-style: none; gap: 30px; }
 .nav-links a { 
     text-decoration: none; 
-    color: #ffffff; /* Ajustado a blanco puro para mejor visibilidad */
+    color: #000000; /* Texto blanco */
     font-size: 1rem; 
     font-weight: 600; 
     padding: 5px 10px; 
     border-radius: 5px; 
     transition: all 0.3s ease; 
-    text-shadow: 0 0 5px rgba(0,0,0,0.5); /* Sombra de texto para mejorar contraste */
+    text-shadow: none; /* Sin sombra en el fondo sólido */
 }
 .nav-links a:hover, .nav-links a.active { 
-    color: #fff; 
-    background-color: rgba(230, 126, 34, 0.9); /* Mantenemos el hover en color resaltante */
-    text-shadow: none;
+    color: #000000; 
+    background-color: #6393d6;
 }
 
-/* ESTILOS REINTEGRADOS PARA BÚSQUEDA Y PRODUCTOS */
-.navbar-search-section { 
-    display: flex; 
-    align-items: center; 
-    gap: 15px; 
-}
-.search-form { 
-    display: flex; 
-}
-.search-input { 
-    padding: 8px 12px; 
-    font-size: 0.9rem; 
-    border: 1px solid #e67e22; 
-    background-color: rgba(63, 90, 90, 0.7); /* Fondo semi-transparente */
-    color: #ecf0f1; 
-    border-radius: 5px 0 0 5px; 
-    outline: none; 
-    transition: border-color 0.3s ease, background-color 0.3s ease; 
-}
-.search-input::placeholder { 
-    color: #bbb; 
-}
-.search-input:focus { 
-    border-color: #f39c12; 
-    background-color: #4a6a6a; 
-}
-.search-button { 
-    padding: 8px 12px; 
-    font-size: 0.9rem; 
-    background-color: #e67e22; 
-    color: white; 
-    border: 1px solid #e67e22; 
-    border-radius: 0 5px 5px 0; 
-    cursor: pointer; 
-    transition: background-color 0.3s ease; 
-}
-.search-button:hover { 
-    background-color: #f39c12; 
-}
-.all-products-link { 
-    text-decoration: none; 
-    color: #ffffff; /* Ajustado a blanco puro */
-    font-size: 0.9rem; 
-    font-weight: 600; 
-    padding: 8px 10px; 
-    border-radius: 5px; 
-    background-color: rgba(63, 90, 90, 0.7); /* Fondo semi-transparente */
-    border: 1px solid #e67e22; 
-    transition: all 0.3s ease; 
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
-}
-.all-products-link:hover { 
-    background-color: #4a6a6a; 
-    color: #fff; 
-    border-color: #f39c12; 
-    text-shadow: none;
-}
-
+/* Estilos de búsqueda para el tema oscuro (perfectos como estaban) */
+.navbar-search-section { display: flex; align-items: center; gap: 15px; }
+.search-form { display: flex; }
+.search-input { padding: 8px 12px; font-size: 0.9rem; border: 1px solid #000000; background-color: #ffffff; color: #000000; border-radius: 5px 0 0 5px; outline: none; transition: border-color 0.3s ease, background-color 0.3s ease; }
+.search-input::placeholder { color: #bbb; }
+.search-input:focus { border-color: #005fe4; background-color: #000000; }
+.search-button { padding: 8px 12px; font-size: 0.9rem; background-color: #005fe4; color: white; border: 1px solid #005fe4; border-radius: 0 5px 5px 0; cursor: pointer; transition: background-color 0.3s ease; }
+.search-button:hover { background-color: #005fe4; }
+.all-products-link { text-decoration: none; color: #ecf0f1; font-size: 0.9rem; font-weight: 600; padding: 8px 10px; border-radius: 5px; background-color: #005fe4; border: 1px solid #005fe4; transition: all 0.3s ease; }
+.all-products-link:hover { background-color: #000000; color: #fff; border-color: #005fe4; }
 
 /* ==============================================
    SECCIÓN BIENVENIDA (CARRUSEL DE VIDEO E IMAGEN)
@@ -268,8 +218,8 @@ section {
 ========================= */
 #siguenos { 
     text-align: center; 
-    background-color: #2c3e3e; 
-    color: #ecf0f1; 
+    background-color: #0b61ff; 
+    color: #ffffff; 
     max-width: none; 
     padding-top: 40px; 
     padding-bottom: 40px; 
@@ -277,7 +227,7 @@ section {
     padding-right: 20px;
 }
 #siguenos h2 { 
-    color: #fff; 
+    color: #ffffff; 
     font-size: 2rem; 
     margin-bottom: 10px; 
 }
@@ -307,11 +257,11 @@ section {
    FOOTER
 ========================= */
 footer { 
-    background: #1c1c1c; 
-    color: #aaa; 
+    background: #ffffff; 
+    color: #0099ff; 
     text-align: center; 
     padding: 25px 20px; 
-    font-size: 0.9rem;
+    font-size: 1.0rem;
 }
 
 /* ========================
