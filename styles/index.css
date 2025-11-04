@@ -39,7 +39,7 @@ section {
 ========================= */
 header {
     background-color: transparent;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.5);
     position: sticky; 
     top: 0;
     z-index: 100;
@@ -50,9 +50,6 @@ header {
     max-width: 1300px;
     margin: 12px auto;
     padding: 12px 22px;
-    border: 3px dashed #000000;
-    border-radius: 60px 40px 60px 40px / 40px 60px 40px 60px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }    
 .navbar {
     display: flex;
@@ -79,7 +76,7 @@ header {
 }
 .nav-links a:hover, .nav-links a.active { 
     color: #000000; 
-    background-color: #6393d6;
+    background-color: #8ab7f5;
 }
 
 /* Estilos de búsqueda para el tema oscuro (perfectos como estaban) */
@@ -87,11 +84,11 @@ header {
 .search-form { display: flex; }
 .search-input { padding: 8px 12px; font-size: 0.9rem; border: 1px solid #000000; background-color: #ffffff; color: #000000; border-radius: 5px 0 0 5px; outline: none; transition: border-color 0.3s ease, background-color 0.3s ease; }
 .search-input::placeholder { color: #bbb; }
-.search-input:focus { border-color: #005fe4; background-color: #000000; }
+.search-input:focus { border-color: #005fe4; background-color: white; }
 .search-button { padding: 8px 12px; font-size: 0.9rem; background-color: #005fe4; color: white; border: 1px solid #005fe4; border-radius: 0 5px 5px 0; cursor: pointer; transition: background-color 0.3s ease; }
 .search-button:hover { background-color: #005fe4; }
 .all-products-link { text-decoration: none; color: #ecf0f1; font-size: 0.9rem; font-weight: 600; padding: 8px 10px; border-radius: 5px; background-color: #005fe4; border: 1px solid #005fe4; transition: all 0.3s ease; }
-.all-products-link:hover { background-color: #000000; color: #fff; border-color: #005fe4; }
+.all-products-link:hover { background-color: #1267dd; color: #fff; border-color: #005fe4; }
 
 /* ==============================================
    SECCIÓN BIENVENIDA (CARRUSEL DE VIDEO E IMAGEN)
@@ -218,21 +215,16 @@ header {
 ========================= */
 #siguenos { 
     text-align: center; 
-    background-color: #0b61ff; 
+    background-color: #2371bb; 
     color: #ffffff; 
     max-width: none; 
-    padding-top: 40px; 
-    padding-bottom: 40px; 
+    padding-top: 30px; 
+    padding-bottom: 30px; 
     padding-left: 20px; 
     padding-right: 20px;
 }
-#siguenos h2 { 
-    color: #ffffff; 
-    font-size: 2rem; 
-    margin-bottom: 10px; 
-}
 #siguenos p {
-    font-size: 1rem; 
+    font-size: 1.2rem; 
     margin-bottom: 25px; 
 }
 .social-icons { 
@@ -258,7 +250,7 @@ header {
 ========================= */
 footer { 
     background: #ffffff; 
-    color: #0099ff; 
+    color: #2371bb; 
     text-align: center; 
     padding: 25px 20px; 
     font-size: 1.0rem;
