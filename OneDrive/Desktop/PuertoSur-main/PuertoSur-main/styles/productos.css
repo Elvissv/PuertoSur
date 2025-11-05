@@ -1,0 +1,156 @@
+/* ========================
+   ESTILOS PÁGINA PRODUCTOS.HTML
+========================= */
+
+.products-page-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.products-page-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+/* --- Estilo para el link "Todos los productos" del header --- */
+.navbar-search-section .all-products-link.active {
+    background-color: #3498db;
+    color: #fff;
+    border-color: #3498db;
+}
+
+/* --- 1. Navegación de Categorías (Pestañas) --- */
+.product-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.product-categories .category-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #2371bb;
+    background-color: #fff;
+    border: 1px solid #2371bb;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.product-categories .category-btn:hover {
+    background-color: #f0f8ff;
+}
+
+.product-categories .category-btn.active {
+    background-color: #2371bb;
+    color: #fff;
+}
+
+/* --- 2. Contenedor de Productos --- */
+.categories-container {
+    position: relative;
+}
+
+.category-content {
+    display: none;
+}
+
+.category-content.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ====================================
+   --- 3. Cuadrícula de Productos (¡TAMAÑO AJUSTADO!) ---
+==================================== */
+.product-grid {
+    display: grid;
+    /* ¡CAMBIO! Reducimos el tamaño mínimo de la tarjeta a 200px */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; /* Mantenemos el espacio */
+}
+
+/* ====================================
+   --- 4. Tarjeta de Producto (¡TAMAÑO AJUSTADO!) ---
+==================================== */
+.product-card-item {
+    background: #fff;
+    border-radius: 8px; /* Un poco menos redondeado */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+    box-shadow: none;
+    display: flex; /* ¡CAMBIO! Hacemos la tarjeta flex para controlar mejor el contenido */
+    flex-direction: column; /* Apilamos imagen y contenido verticalmente */
+}
+
+.product-card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Sombra un poco más sutil */
+}
+
+.product-card-item img {
+    width: 100%;
+    /* ¡CAMBIO! Reducimos la altura de la imagen */
+    height: 200px;
+    object-fit: contain; /* 'contain' muestra la imagen completa */
+    padding: 10px; /* Espacio para que la imagen respire */
+    background-color: #f8f9fa; /* Fondo gris claro si la imagen no llena */
+}
+
+.product-card-content {
+    padding: 15px; /* Menos padding */
+    /* ¡CAMBIO! Hacemos que esta parte ocupe el espacio restante */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column; /* Apilamos título, precio y botón */
+}
+
+.product-card-content h3 {
+    font-size: 1rem; /* Más pequeño */
+    color: #333;
+    margin-bottom: 8px; /* Menos espacio */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* ¡CAMBIO! El título ocupa el espacio necesario */
+    flex-grow: 1;
+}
+
+.product-card-content .price {
+    font-size: 1rem; /* Más pequeño */
+    font-weight: 700;
+    color: #2371bb;
+    margin-bottom: 12px; /* Menos espacio */
+}
+
+.product-card-content .view-more-btn {
+    display: block;
+    width: 100%;
+    padding: 8px; /* Botón más pequeño */
+    background: #2371bb;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9rem; /* Texto del botón más pequeño */
+    margin-top: auto; /* ¡CAMBIO! Empuja el botón hacia abajo */
+}
+
+.product-card-content .view-more-btn:hover {
+    background: #1a5a9a;
+}

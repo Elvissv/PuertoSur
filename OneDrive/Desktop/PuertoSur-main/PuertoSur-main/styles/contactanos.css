@@ -1,0 +1,143 @@
+/* ========================
+   ESTILOS PÁGINA CONTACTO.HTML
+========================= */
+
+/* Contenedor principal de la página de contacto */
+.contact-page-container {
+    max-width: 900px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.contact-page-container h2 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+}
+
+.contact-page-container p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Contenedor para que el mapa sea responsive */
+.map-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* Proporción 16:9 (para el alto) */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 50px;
+}
+
+/* Estilos del iframe del mapa */
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ========================
+   ESTILOS BOTONES DE CONTACTO
+========================= */
+
+/* Contenedor para los 3 botones de contacto */
+.contact-buttons-container {
+    margin-top: 20px;
+    display: flex; /* Para alinear los botones */
+    flex-direction:initial; /* Para apilarlos de lado a lado */
+    align-items: center; /* Para centrarlos */
+    gap: 15px; /* Espacio entre botones */
+}
+
+/* --- Estilo Botón WhatsApp (COMPLETO) --- */
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366; /* Color oficial de WhatsApp */
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    min-width: 300px; /* Ancho mínimo para que se vean parejos */
+}
+
+.whatsapp-button img {
+    width: 28px;
+    height: 28px;
+    margin-right: 15px;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E; /* Color más oscuro al pasar el mouse */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* --- Estilo Botón Email --- */
+.email-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #74d7e0;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    min-width: 300px; /* Ancho mínimo para que se vean parejos */
+}
+
+.email-button img {
+    width: 28px;
+    height: 28px;
+    margin-right: 15px;
+}
+
+.email-button:hover {
+    background-color: #B23121; /* Color más oscuro */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* --- Estilo Botón Teléfono --- */
+.phone-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3498db; /* Color azul para llamada */
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    min-width: 300px; /* Ancho mínimo para que se vean parejos */
+}
+
+.phone-button img {
+    width: 28px;
+    height: 28px;
+    margin-right: 15px;
+}
+
+.phone-button:hover {
+    background-color: #2980b9; /* Color más oscuro */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
