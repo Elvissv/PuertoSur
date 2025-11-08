@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Puerto Sur</title>
+    
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/servicios.css">
+    <link rel="stylesheet" href="../chatBot/chatbot.css">
+    <script src="../chatBot/chatbot.js" defer></script>
+
+    
+    <script src="../javaScripts/index.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            
+            <a href="../index.html" class="logo">
+                <img src="../imgs/logo_puertosur.png" alt="PuertoSur Logo">
+            </a>
+    
+            <nav>
+               <ul class="nav-links">
+                    <li><a href="../index.html#siguenos">Síguenos</a></li> 
+                    <li><a href="../index.html">Inicio</a></li> 
+                    <li><a href="servicios.html">Servicios</a></li> 
+                    <li><a href="somos.html">Quiénes Somos</a></li> 
+                    <li><a href="contacto.html">Contáctanos</a></li>
+                    <li><a href="cotizar.html">Cotización</a></li>
+               </ul>
+            </nav>
+    
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+               <div class="search-container">
+                    <svg class="search-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar...">
+               </div>
+               
+               <div class="dropdown-container">
+                    <button class="dropdown-button" id="dropdownButton">
+                        <span>Productos</span>
+                        <svg class="dropdown-arrow" id="dropdownArrow" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="productos.html#poleras">Poleras</a>
+                        <a href="productos.html#parkas">Parkas</a>
+                        <a href="productos.html#pantalon">Pantalón</a>
+                        <a href="productos.html#termico">Ropa Térmica</a>
+                        <a href="productos.html#zapatos">Zapatos</a>
+                        <a href="productos.html#confecciones">Confecciones</a>
+                        <a href="productos.html" style="font-weight: bold;">Ver Todos...</a>
+                    </div>
+               </div>
+            </div>
+    
+        </div>
+    </header>
+
+    <main>
+        <section class="services-page-container">
+            <h2>Nuestros Servicios</h2>
+            <p>Nos especializamos en confección y bordado de alta calidad para tu empresa.</p>
+            
+            <div class="services-wrapper">
+
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="service-icon">★</div>
+                        <h3>Bordados y Estampados Textiles</h3>
+                        <p>Entregamos el servicio de bordado para prendas terminadas, camisas, blusas, delantales, chaquetas, gorros, guantes.</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="service-icon">★</div>
+                        <h3>Fabricación de Uniformes</h3>
+                        <p>Confección de uniformes laborales, de acuerdo a las necesidades técnicas de nuestros clientes, delantales, polar, pantalones, gorros, utilizamos telas técnicas, que poseen características especiales para asegurar la durabilidad de las prendas.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="service-icon">★</div>
+                        <h3>Fabricación Ropa Térmica</h3>
+                        <p>Fabricación de ropa térmica e impermeable, confección de ropa térmica de acuerdo a las necesidades del cliente, utilizando telas e insumos seleccionados para la zona sur del país, todas nuestras prendas térmicas son impermeables, ya que termo sellamos todas las costuras.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>2025 &copy; Todos los derechos Reservados &copy; Informaticones</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+/* 💬 Estilos del chatbot - Puerto Sur */
+.chatbot-toggle {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: #007bbd;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+.chatbot-toggle:hover {
+  transform: scale(1.1);
+  background-color: #005f8a;
+}
+
+.chatbot-container {
+  position: fixed;
+  bottom: 60px;
+  right: 25px;
+  width: 320px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 999;
+  font-family: Arial, sans-serif;
+}
+
+.chatbot-header {
+  background: #007bbd;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chatbot-header h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.chatbot-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.chatbot-messages {
+  padding: 10px;
+  flex-grow: 1;
+  height: 300px;
+  overflow-y: auto;
+  font-size: 14px;
+  background: #f9f9f9;
+}
+.message {
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.message.bot {
+  background: #e6f4ff;
+  padding: 6px 10px;
+  border-radius: 10px;
+  align-self: flex-start;
+}
+.message.user {
+  background: #007bbd;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 10px;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.chatbot-input-area {
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding: 8px;
+  background: white;
+}
+.chatbot-input-area input {
+  flex-grow: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.chatbot-input-area button {
+  background: #007bbd;
+  color: white;
+  border: none;
+  margin-left: 5px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.chatbot-input-area button:hover {
+  background: #005f8a;
+}

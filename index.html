@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puerto Sur</title>
+    
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="chatBot/chatbot.css">
+    <script src="chatBot/chatbot.js" defer></script>
+
+    
+    <script src="javaScripts/index.js" defer></script>
+    
+    </head>
+<body>
+
+    <header>
+        <div class="header-container">
+            
+            <a href="index.html" class="logo">
+                <img src="imgs/logo_puertosur.png" alt="PuertoSur Logo">
+            </a>
+    
+            <nav>
+               <ul class="nav-links">
+                    <li><a href="index.html#siguenos">Síguenos</a></li> 
+                    <li><a href="index.html">Inicio</a></li> 
+                    <li><a href="navegador_nav/servicios.html">Servicios</a></li> 
+                    <li><a href="navegador_nav/somos.html">Quiénes Somos</a></li> 
+                    <li><a href="navegador_nav/contacto.html">Contáctanos</a></li>
+                    <li><a href="navegador_nav/cotizar.html">Cotización</a></li>
+               </ul>
+            </nav>
+    
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+               <div class="search-container">
+                    <svg class="search-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar...">
+               </div>
+               
+               <div class="dropdown-container">
+                    <button class="dropdown-button" id="dropdownButton">
+                        <span>Productos</span>
+                        <svg class="dropdown-arrow" id="dropdownArrow" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="navegador_nav/productos.html#poleras">Poleras</a>
+                        <a href="navegador_nav/productos.html#parkas">Parkas</a>
+                        <a href="navegador_nav/productos.html#pantalon">Pantalón</a>
+                        <a href="navegador_nav/productos.html#termico">Ropa Térmica</a>
+                        <a href="navegador_nav/productos.html#zapatos">Zapatos</a>
+                        <a href="navegador_nav/productos.html#confecciones">Confecciones</a>
+                        <a href="navegador_nav/productos.html" style="font-weight: bold;">Ver Todos...</a>
+                    </div>
+               </div>
+            </div>
+    
+        </div>
+    </header>
+
+    <main>
+        <section id="welcome" class="Bienvenida carousel-container">
+            <div class="carousel-slide active" data-index="0">
+                <video autoplay loop muted playsinline class="media-background">
+                     <source src="videos/Bienvenida.mp4" type="video/mp4">
+                    Tu navegador no soporta el tag de video.
+                </video>
+            </div>
+            <div class="carousel-slide" data-index="1">
+                <video loop muted playsinline class="media-background">
+                     <source src="videos/presentacion_ropa.mp4" type="video/mp4">
+                     Tu navegador no soporta el tag de video.
+                </video>
+            </div>
+            
+            <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
+            <button class="carousel-btn next" aria-label="Siguiente">&#10095;</button>
+        </section>
+        
+        <section id="siguenos" class="social-section">
+            <h2 class="social-title">Síguenos en nuestras redes sociales</h2>
+            <div class="social-icons">
+        
+                <a href="#" class="social-link facebook" target="_blank" rel="noopener noreferrer">
+                    <div class="icon-circle">
+                        <svg width="40" height="40" viewbox="0 0 24 24" fill="none"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047v-2.66c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.971H15.83c-1.49 0-1.955.93-1.955 1.886v2.265h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z" fill="white"></path></svg>
+                    </div>
+                    <span class="social-name">Facebook</span>
+                </a>
+                
+                <a href="#" class="social-link youtube" target="_blank" rel="noopener noreferrer">
+                    <div class="icon-circle">
+                        <svg width="40" height="40" viewbox="0 0 24 24" fill="none"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="white"></path></svg>
+                    </div>
+                    <span class="social-name">YouTube</span>
+                </a>
+                
+                <a href="#" class="social-link tiktok" target="_blank" rel="noopener noreferrer">
+                    <div class="icon-circle">
+                        <svg width="40" height="40" viewbox="0 0 24 24" fill="none"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" fill="white"></path></svg>
+                    </div>
+                    <span class="social-name">TikTok</span>
+                </a>
+                
+                <a href="#" class="social-link instagram" target="_blank" rel="noopener noreferrer">
+                    <div class="icon-circle">
+                        <svg width="40" height="40" viewbox="0 0 24 24" fill="none"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" fill="white"></path></svg>
+                    </div>
+                    <span class="social-name">Instagram</span>
+                </a>
+        
+            </div>
+        </section>
+
+        <section id="products">
+            <div class="container">
+                <h2 class="main-title">Nuestros Productos</h2>
+                <p class="subtitle">Una muestra de la calidad que ofrecemos en confección y bordado</p>
+                
+                <div class="cards-container">
+                    
+                    <article class="product-card">
+                        <div class="card-glow"></div>
+                        <div class="image-container">
+                            <div class="product-image">
+                                <img src="imgs/muestras/camiseta_camo.png" alt="Camiseta Camo Petroleo">
+                            </div>
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="product-title">Camiseta Camo Petroleo</h3>
+                        </div>
+                    </article>
+        
+                    <article class="product-card">
+                        <div class="card-glow"></div>
+                        <div class="image-container">
+                            <div class="product-image">
+                                <img src="imgs/muestras/parka_dama.png" alt="PARKA ARRAYAN DAMA HW">
+                            </div>
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="product-title">PARKA ARRAYAN DAMA HW</h3>
+                        </div>
+                    </article>
+        
+                    <article class="product-card">
+                        <div class="card-glow"></div>
+                        <div class="image-container">
+                            <div class="product-image">
+                                <img src="imgs/muestras/parka_siberia.png" alt="Parka Siberia HW">
+                            </div>
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="product-title">PARKA SIBERIA HW</h3>
+                        </div>
+                    </article>
+        
+                    <article class="product-card">
+                        <div class="card-glow"></div>
+                        <div class="image-container">
+                            <div class="product-image">
+                                <img src="imgs/muestras/pantalon_wolverine.png" alt="PANTALON WOLVERINE HW">
+                            </div>
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="product-title">PANTALON WOLVERINE HW</h3>
+                        </div>
+                    </article>
+        
+                    <article class="product-card">
+                        <div class="card-glow"></div>
+                        <div class="image-container">
+                            <div class="product-image">
+                                <img src="imgs/muestras/chaqueta_intitucional.png" alt="SOFTSHELL THELMU INSTITUCIONAL">
+                            </div>
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="product-title">SOFTSHELL THELMU INSTITUCIONAL</h3>
+                        </div>
+                    </article>
+        
+                    <article class="product-card">
+                        <div class="card-glow"></div>
+                        <div class="image-container">
+                            <div class="product-image">
+                                <img src="imgs/muestras/zapatos.jpg" alt="ZAPATOS DE SEGURIDAD">
+                            </div>
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="product-title">ZAPATOS DE SEGURIDAD</h3>
+                        </div>
+                    </article>
+        
+                </div>
+            </div>
+        </section>
+        
+    </main> 
+    
+    <footer class="site-footer">
+        <div class="footer-container-grid">
+            
+            <div class="footer-column">
+                <a href="index.html" class="footer-logo">
+                    <img src="imgs/logo_puertosur.png" alt="PuertoSur Logo">
+                </a>
+                <p class="footer-tagline">Confección y bordado de alta calidad para tu empresa.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Nosotros</h4>
+                <ul class="footer-links">
+                    <li><a href="navegador_nav/servicios.html">Servicios</a></li>
+                    <li><a href="navegador_nav/somos.html">Quiénes Somos</a></li>
+                    <li><a href="navegador_nav/productos.html">Todos los Productos</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Ayuda</h4>
+                <ul class="footer-links">
+                    <li><a href="navegador_nav/contacto.html">Contáctanos</a></li>
+                    <li><a href="navegador_nav/cotizar.html">Solicitar Cotización</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4>Síguenos</h4>
+                <div class="footer-social-icons">
+                    <a href="#" target="_blank" rel="noopener noreferrer"><img src="imgs/icons/facebook.png" alt="Facebook"></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><img src="imgs/icons/ig.png" alt="Instagram"></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><img src="imgs/icons/youtube.png" alt="Youtube"></a>
+                    <a href="#" target="_blank" rel="noopener noreferrer"><img src="imgs/icons/Ttiktok.png" alt="TikTok"></a>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="footer-bottom-bar">
+            <p>2025 &copy; Todos los derechos Reservados &copy; Informaticones</p>
+        </div>
+    </footer>
+
+
+
+</body>
+</html>

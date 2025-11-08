@@ -1,0 +1,363 @@
+/* ==============================================
+   SECCIÓN BIENVENIDA (CARRUSEL)
+============================================== */
+.Bienvenida.carousel-container { 
+    height: 90vh; /* Ocupa el 90% del alto de la pantalla */
+    width: 100%;   /* Ocupa el 100% del ancho */
+    padding: 0; 
+    margin: 0;     /* Sin márgenes */
+    position: relative; 
+    overflow: hidden; 
+    max-width: none; /* ¡Importante! Permite que sea más ancho que 1300px */
+}
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; 
+    transition: opacity 1.5s ease-in-out; 
+    z-index: 1; 
+    background-color: #000; 
+}
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 2; 
+}
+.media-background { 
+    width: 100%; 
+    height: 100%; 
+    object-position: center center; 
+    object-fit: cover;
+}
+.carousel-btn { 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.4); 
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 3; 
+    transition: background-color 0.3s ease;
+    border-radius: 3px;
+}
+.carousel-btn:hover { background-color: rgba(0, 0, 0, 0.7); }
+.carousel-btn.prev { left: 20px; }
+.carousel-btn.next { right: 20px; }
+
+/* ========================
+   SECCIÓN PRODUCTOS (NUEVA)
+========================= */
+
+#products { 
+    /* El fondo degradado del nuevo componente */
+    background: linear-gradient(135deg, #105be7 0%, #4277d2 100%);
+    padding: 60px 20px;
+    max-width: none; /* Hacemos que ocupe todo el ancho */
+}
+
+#products .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#products .main-title {
+    text-align: center;
+    font-size: 56px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    letter-spacing: -1px;
+}
+
+/* (Adapté tu H2 para que use la nueva clase) */
+#products h2 {
+    font-size: 56px;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    letter-spacing: -1px;
+}
+
+#products .subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 60px;
+    font-weight: 300;
+}
+
+.cards-container {
+    display: grid;
+    /* Cambié minmax de 320px a 300px para que quepan mejor */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    perspective: 1200px;
+}
+
+.product-card {
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-30px) rotateX(8deg) rotateY(8deg) scale(1.02);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+}
+
+.card-glow {
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+    border-radius: 26px;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    z-index: -1;
+    animation: rotate 3s linear infinite;
+}
+
+.product-card:hover .card-glow {
+    opacity: 0.7;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Estilos de la imagen (adaptados) */
+    transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    transform: translateZ(20px);
+}
+
+/* ¡NUEVA REGLA! Para adaptar tu <img> */
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Usa tu estilo de 'contain' */
+    padding: 15px;       /* Usa tu padding */
+    transition: inherit; /* Hereda la transición del padre */
+    transform: inherit;  /* Hereda la transformación del padre */
+}
+
+.product-card:hover .product-image {
+    transform: translateZ(40px) scale(1.1) rotateZ(5deg);
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.product-card:hover .image-overlay {
+    opacity: 1;
+}
+
+.card-content {
+    padding: 30px;
+    position: relative;
+    background: #ffffff;
+    /* Hacemos que el contenido tenga una altura mínima para alinear las tarjetas */
+    min-height: 120px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-title {
+    font-size: 1.2rem; /* Ajustado para tus títulos */
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+    transition: all 0.4s ease;
+    transform: translateZ(10px);
+    text-align: center;
+}
+
+/* (Adapté tu H3 para que use la nueva clase) */
+#products h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+    transition: all 0.4s ease;
+    transform: translateZ(10px);
+    text-align: center;
+}
+
+
+.product-card:hover .product-title,
+.product-card:hover h3 {
+    color: #667eea;
+    transform: translateZ(20px) translateY(-5px);
+}
+
+/* --- Responsive de la nueva sección --- */
+@media (max-width: 768px) {
+    #products h2 { /* .main-title */
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+    #products .subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .product-card:hover {
+        transform: translateY(-15px) rotateX(4deg) rotateY(4deg) scale(1.01);
+    }
+    .image-container {
+        height: 240px;
+    }
+}
+
+/* ========================
+   SECCIÓN SÍGUENOS (NUEVO)
+========================= */
+.social-section {
+    text-align: center;
+    padding: 60px 40px;
+    background: #f8f9fa; /* Le añadí un fondo claro para separarlo */
+    max-width: none; /* Hacemos que ocupe todo el ancho */
+}
+
+.social-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    letter-spacing: -0.5px;
+    color: #2c3e50;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    /* Esto centra los íconos dentro de la página */
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.social-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: translateY(-8px);
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.social-link:hover .icon-circle {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Colores de fondo de Círculos */
+.facebook .icon-circle { background: #1877F2; }
+.youtube .icon-circle { background: #FF0000; }
+.tiktok .icon-circle { background: #000000; }
+.instagram .icon-circle { background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4); }
+
+.social-name {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Colores de Texto */
+.facebook .social-name { color: #1877F2; }
+.youtube .social-name { color: #FF0000; }
+.tiktok .social-name { color: #000000; }
+.instagram .social-name { color: #E4405F; }
+
+/* Responsive de la sección */
+@media (max-width: 600px) {
+    .social-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+    .social-icons {
+        gap: 30px;
+    }
+    .icon-circle {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* ========================
+   DISEÑO RESPONSIVO (¡Simplificado!)
+========================= */
+@media (max-width: 992px) { 
+    .product-grid-static {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) { 
+    .Bienvenida.carousel-container { height: 70vh; } 
+    .carousel-btn { padding: 10px 8px; font-size: 1.2rem; }
+}
+
+@media (max-width: 576px) { 
+    #products { padding-top: 40px; padding-bottom: 40px; }
+    #products h2 { font-size: 1.8rem; margin-bottom: 30px; }
+    .product-grid-static {
+        grid-template-columns: 1fr; 
+        gap: 20px;
+    }
+    .product-card .image-container {
+        height: 240px; 
+    }
+    .card-content h3 {
+        font-size: 0.9rem;
+    }
+}
