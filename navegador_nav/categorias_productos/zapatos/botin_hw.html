@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botin HW - Puerto Sur</title>
+    
+    <link rel="stylesheet" href="../../../styles/global.css">
+    <link rel="stylesheet" href="../producto-detalle.css">
+    
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="../../index.html" class="logo">
+                <img src="../../imgs/logo_puertosur.png" alt="PuertoSur Logo">
+            </a>
+            <nav>
+               <ul class="nav-links">
+                    <li><a href="../../index.html#siguenos">Síguenos</a></li> 
+                    <li><a href="../../index.html">Inicio</a></li> 
+                    <li><a href="../servicios.html">Servicios</a></li> 
+                    <li><a href="../somos.html">Quiénes Somos</a></li> 
+                    <li><a href="../contacto.html">Contáctanos</a></li>
+                    <li><a href="../cotizar.html">Cotización</a></li>
+               </ul>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+               <div class="search-container">
+                    <svg class="search-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar...">
+               </div>
+               <div class="dropdown-container">
+                    <button class="dropdown-button" id="dropdownButton">
+                        <span>Productos</span>
+                        <svg class="dropdown-arrow" id="dropdownArrow" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="../productos.html#poleras">Poleras</a>
+                        <a href="../productos.html#parkas">Parkas</a>
+                        <a href="../productos.html" style="font-weight: bold;">Ver Todos...</a>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="product-detail-page">
+
+        <div class="container">
+           <div class="product-layout">
+            
+            <div class="gallery-section">
+                 <div class="main-image" id="mainImage">
+                    <img src="../../imgs/prod/botin_hw.jpg" alt="Botin HW">
+                 </div>
+                 <div class="thumbnail-container">
+                    <div class="thumbnail active">
+                        <img src="../../imgs/prod/botin_hw.jpg" alt="Botin HW Vista 1">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="../../imgs/prod/botin_hw_low.jpg" alt="Botin HW Vista 2">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="../../imgs/prod/botin_hw.jpg" alt="Botin HW Vista 3">
+                    </div>
+                 </div>
+            </div>
+
+            <div class="info-section">
+                 <h1 class="product-title" id="productTitle">Botin HW (Hard Work)</h1>
+                 <p class="product-description" id="productDescription">Botín de seguridad de alta resistencia, diseñado para faenas exigentes. Cuenta con punta de acero, suela antideslizante y materiales de primera calidad para máxima durabilidad.</p>
+                 
+                 <div class="sku-section">
+                    <span class="sku-label">SKU:</span> 
+                    <span id="skuCode">ZAP-HW-001</span>
+                 </div>
+                 
+                 <div>
+                    <span class="availability-badge available" id="availabilityBadge"> ✓ Disponible </span>
+                 </div>
+                 
+                 <div class="stock-info">
+                    Stock disponible: <strong id="stockQuantity">42</strong> unidades
+                 </div>
+                 
+                 <div class="size-section">
+                    <h3 class="section-title">Talla (Calzado)</h3>
+                    <div class="size-options">
+                        <button class="size-btn" data-size="40">40</button>
+                        <button class="size-btn" data-size="41">41</button>
+                        <button class="size-btn selected" data-size="42">42</button>
+                        <button class="size-btn" data-size="43">43</button>
+                        <button class="size-btn" data-size="44">44</button>
+                        <button class="size-btn" data-size="45">45</button>
+                    </div>
+                    <button class="size-guide-btn" id="sizeGuideBtn">📏 Ver Guía de Tallas</button>
+                 </div>
+                 
+                 <div class="color-section">
+                    <h3 class="section-title">Color</h3>
+                    <div class="color-options">
+                       <div class="color-option selected" data-color="Negro" style="background: #1a1a1a;"></div>
+                       <div class="color-option" data-color="Cafe" style="background: #8B4513;"></div>
+                    </div>
+                 </div>
+            </div>
+
+           </div>
+        </div>
+    </main>
+
+    <div class="modal" id="sizeGuideModal">
+       <div class="modal-content">
+            <button class="modal-close" id="closeModal">×</button>
+            <h2 class="section-title">Guía de Tallas (Calzado)</h2>
+            <div class="size-guide-image">
+                <img src="../../imgs/muestras/zapatos.jpg" alt="Guía de tallas">
+            </div>
+       </div>
+    </div>
+    
+    <footer class="site-footer">
+        </footer>
+
+    <script src="../../javaScripts/index.js" defer></script>
+    <script src="../producto-detalle.js" defer></script>
+
+</body>
+</html>

@@ -55,7 +55,7 @@
 
 #products { 
     /* El fondo degradado del nuevo componente */
-    background: linear-gradient(135deg, #105be7 0%, #4277d2 100%);
+    background: linear-gradient(135deg, #54b2ff 0%, #37a5ff 100%);
     padding: 60px 20px;
     max-width: none; /* Hacemos que ocupe todo el ancho */
 }
@@ -140,9 +140,9 @@
 .image-container {
     position: relative;
     width: 100%;
-    height: 280px;
+    height: 250px;
     overflow: hidden;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #6694ea 0%, #ffffff 100%);
 }
 
 .product-image {
@@ -156,7 +156,6 @@
     transform: translateZ(20px);
 }
 
-/* ¡NUEVA REGLA! Para adaptar tu <img> */
 .product-image img {
     width: 100%;
     height: 100%;
@@ -167,7 +166,7 @@
 }
 
 .product-card:hover .product-image {
-    transform: translateZ(40px) scale(1.1) rotateZ(5deg);
+    transform: translateZ(30px) scale(1.1) rotateZ(5deg);
 }
 
 .image-overlay {
@@ -187,7 +186,7 @@
     position: relative;
     background: #ffffff;
     /* Hacemos que el contenido tenga una altura mínima para alinear las tarjetas */
-    min-height: 120px; 
+    min-height: 80px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -195,6 +194,7 @@
 
 .product-title {
     font-size: 1.2rem; /* Ajustado para tus títulos */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: 700;
     color: #2d3748;
     margin: 0;
@@ -244,7 +244,7 @@
 }
 
 /* ========================
-   SECCIÓN SÍGUENOS (NUEVO)
+   SECCIÓN SÍGUENOS
 ========================= */
 .social-section {
     text-align: center;
