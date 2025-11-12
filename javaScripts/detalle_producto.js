@@ -2,7 +2,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     
-    // 1. Lógica de Galería de Imágenes
+    // 1. Lógica de Galería de Imágenes (Sin cambios)
     const mainImage = document.querySelector('.main-image img');
     const thumbnails = document.querySelectorAll('.thumbnail');
 
@@ -19,16 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // 2. Selector de Tallas
-    const sizeBtns = document.querySelectorAll('.size-btn');
-    sizeBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            sizeBtns.forEach(b => b.classList.remove('selected'));
-            this.classList.add('selected');
-        });
-    });
-
-    // 3. Modal de Guía de Tallas
+    // 3. Modal de Guía de Tallas (Sin cambios)
     const modal = document.getElementById('sizeGuideModal');
     const openBtn = document.getElementById('sizeGuideBtn');
     const closeBtn = document.getElementById('closeModal');

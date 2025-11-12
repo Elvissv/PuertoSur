@@ -1,5 +1,39 @@
 /* ========================
-   NUEVO HEADER
+   1. RESETEO Y GLOBALES
+========================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Para el scroll de #siguenos */
+}
+
+body {
+    /* ¡AQUÍ ESTÁ EL CAMBIO DE FUENTE! */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa; /* Un fondo global, ya que el header es blanco */
+}
+
+/* Estilos globales para secciones y títulos */
+section {
+    padding: 60px 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #1a202c; /* Un color oscuro para títulos */
+}
+
+/* ========================
+   2. NUEVO HEADER (Tu código)
 ========================= */
 
 header {
@@ -166,7 +200,7 @@ nav {
 }
 
 /* ========================
-   FOOTER - OPCIÓN 3 (Columnas)
+   3. FOOTER - OPCIÓN 3 (Tu código)
 ========================= */
 .site-footer {
     background-color: #ffffff;
@@ -250,21 +284,11 @@ nav {
     color: #718096;
 }
 
-/* Responsive del Footer de Columnas */
-@media (max-width: 992px) {
-    .footer-container-grid {
-        /* 2 columnas en tablet */
-        grid-template-columns: 1fr 1fr; 
-    }
-}
-@media (max-width: 600px) {
-    .footer-container-grid {
-        /* 1 columna en móvil */
-        grid-template-columns: 1fr; 
-    }
-}
+/* ========================
+   4. QUERIES RESPONSIVAS (Organizadas)
+========================= */
 
-
+/* Tablet (Header) */
 @media (max-width: 1024px) {
     .header-container {
       gap: 1rem;
@@ -280,6 +304,15 @@ nav {
     }
 }
 
+/* Tablet (Footer) */
+@media (max-width: 992px) {
+    .footer-container-grid {
+        /* 2 columnas en tablet */
+        grid-template-columns: 1fr 1fr; 
+    }
+}
+
+/* Móvil (Header) */
 @media (max-width: 768px) {
     header {
       padding: 1rem;
@@ -299,5 +332,13 @@ nav {
     }
     .search-container {
       min-width: auto;
+    }
+}
+
+/* Móvil (Footer) */
+@media (max-width: 600px) {
+    .footer-container-grid {
+        /* 1 columna en móvil */
+        grid-template-columns: 1fr; 
     }
 }

@@ -156,6 +156,94 @@ body.product-detail-page {
     color: #155724;
 }
 
+/* ========================
+   NUEVOS ESTILOS
+========================= */
+
+/* --- Estilos para el Precio (Faltaba) --- */
+.price-tag {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #005fe4;
+    margin: 10px 0;
+}
+
+/* --- Sección de Personalización (Nuevo) --- */
+.customization-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.customization-options {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+/* Oculta el radio button real */
+.custom-radio input {
+    display: none;
+}
+
+/* Estilo del label (el botón falso) */
+.custom-radio label {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #ddd;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+/* Estilo cuando el radio button está seleccionado */
+.custom-radio input:checked + label {
+    background: #005fe4;
+    color: white;
+    border-color: #005fe4;
+}
+
+/* Estilo hover (solo si no está seleccionado) */
+.custom-radio input:not(:checked) + label:hover {
+    border-color: #005fe4;
+    transform: translateY(-2px);
+}
+
+/* --- Sección de Color (Faltaba) --- */
+.color-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.color-options {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.color-option {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-option.selected {
+    border-color: #1a1a1a;
+    box-shadow: 0 0 0 2px white, 0 0 0 4px #1a1a1a;
+}
+
 /* --- Selectores (Talla / Color) --- */
 .section-title {
     font-size: 1.1rem;
