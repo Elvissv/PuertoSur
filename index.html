@@ -7,13 +7,15 @@
     
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/index.css">
+
     <link rel="stylesheet" href="chatBot/chatbot.css">
     <script src="chatBot/chatbot.js" defer></script>
 
     
     <script src="javaScripts/index.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/atropos@2.0.2/atropos.min.css" />
     
-    </head>
+</head>
 <body>
 
     <header>
@@ -23,40 +25,42 @@
                 <img src="imgs/logo_puertosur.png" alt="PuertoSur Logo">
             </a>
     
-            <nav>
-               <ul class="nav-links">
-                    <li><a href="index.html#siguenos">Síguenos</a></li> 
-                    <li><a href="index.html">Inicio</a></li> 
-                    <li><a href="navegador_nav/servicios.html">Servicios</a></li> 
-                    <li><a href="navegador_nav/somos.html">Quiénes Somos</a></li> 
-                    <li><a href="navegador_nav/contacto.html">Contáctanos</a></li>
-                    <li><a href="navegador_nav/cotizar.html">Cotización</a></li>
-               </ul>
-            </nav>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
     
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-               <div class="search-container">
-                    <svg class="search-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                    <input type="text" class="search-input" id="searchInput" placeholder="Buscar...">
-               </div>
-               
-               <div class="dropdown-container">
-                    <button class="dropdown-button" id="dropdownButton">
-                        <span>Productos</span>
-                        <svg class="dropdown-arrow" id="dropdownArrow" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="dropdown-menu" id="dropdownMenu">
-                        <a href="navegador_nav/productos.html#poleras">Poleras</a>
-                        <a href="navegador_nav/productos.html#parkas">Parkas</a>
-                        <a href="navegador_nav/productos.html#pantalon">Pantalón</a>
-                        <a href="navegador_nav/productos.html#termico">Ropa Térmica</a>
-                        <a href="navegador_nav/productos.html#zapatos">Zapatos</a>
-                        <a href="navegador_nav/productos.html#confecciones">Confecciones</a>
-                        <a href="navegador_nav/productos.html" style="font-weight: bold;">Ver Todos...</a>
-                    </div>
-               </div>
-            </div>
-    
+            <div class="nav-grouping" id="navGrouping">
+                <nav>
+                   <ul class="nav-links">
+                        <li><a href="index.html#siguenos">Síguenos</a></li> 
+                        <li><a href="index.html">Inicio</a></li> 
+                        <li><a href="navegador_nav/servicios.html">Servicios</a></li> 
+                        <li><a href="navegador_nav/somos.html">Quiénes Somos</a></li> 
+                        <li><a href="navegador_nav/contacto.html">Contáctanos</a></li>
+                        <li><a href="navegador_nav/cotizar.html">Cotización</a></li>
+                   </ul>
+                </nav>
+        
+                <div class="header-actions">
+                   <div class="search-container">
+                        <svg class="search-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        <input type="text" class="search-input" id="searchInput" placeholder="Buscar...">
+                   </div>
+                   <div class="dropdown-container">
+                        <button class="dropdown-button" id="dropdownButton">
+                            <span>Productos</span>
+                            <svg class="dropdown-arrow" id="dropdownArrow" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <a href="navegador_nav/productos.html#poleras">Poleras</a>
+                            <a href="navegador_nav/productos.html#parkas">Parkas</a>
+                            <a href="navegador_nav/productos.html" style="font-weight: bold;">Ver Todos...</a>
+                        </div>
+                   </div>
+                </div>
+            </div> 
         </div>
     </header>
 
@@ -69,10 +73,7 @@
                 </video>
             </div>
             <div class="carousel-slide" data-index="1">
-                <video loop muted playsinline class="media-background">
-                     <source src="videos/presentacion_ropa.mp4" type="video/mp4">
-                     Tu navegador no soporta el tag de video.
-                </video>
+                <img src="imgs/equipo_tienda_fisica.jpg" alt="equipo_tienda_fisica" class="media-background">
             </div>
             
             <button class="carousel-btn prev" aria-label="Anterior">&#10094;</button>
@@ -137,6 +138,12 @@
         
             </div>
         </section>
+
+        <section id="seguridad-banner" class="seguridad-banner-section">
+            <div class="seguridad-banner-container">
+                <img src="imgs/Ropa de seguridad1.png" alt="Banner Ropa de seguridad" class="seguridad-banner-image">
+            </div>
+        </section>
             
         <section id="siguenos" class="social-section">
             <h2 class="social-title">Síguenos en nuestras redes sociales</h2>
@@ -180,83 +187,131 @@
                 
                 <div class="cards-container">
                     
-                    <article class="product-card">
-                        <div class="card-glow"></div>
-                        <div class="image-container">
-                            <div class="product-image">
-                                <img src="imgs/muestras/camiseta_camo.png" alt="Camiseta Camo Petroleo">
+                    <div class="atropos my-atropos">
+                        <div class="atropos-scale">
+                            <div class="atropos-rotate">
+                                <div class="atropos-inner">
+                                    <article class="product-card">
+                                        <div class="card-glow"></div>
+                                        <div class="image-container" data-atropos-offset="0">
+                                            <div class="product-image">
+                                                <img src="imgs/muestras/camiseta_camo.png" alt="Camiseta Camo Petroleo" data-atropos-offset="5">
+                                            </div>
+                                            <div class="image-overlay" data-atropos-offset="2"></div>
+                                        </div>
+                                        <div class="card-content" data-atropos-offset="3">
+                                            <h3 class="product-title">CAMISETA CAMO PETROLEO</h3>
+                                        </div>
+                                    </article>
+                                </div>
                             </div>
-                            <div class="image-overlay"></div>
                         </div>
-                        <div class="card-content">
-                            <h3 class="product-title">CAMISETA CAMO PETROLEO</h3>
-                        </div>
-                    </article>
+                    </div>
         
-                    <article class="product-card">
-                        <div class="card-glow"></div>
-                        <div class="image-container">
-                            <div class="product-image">
-                                <img src="imgs/muestras/parka_dama.png" alt="PARKA ARRAYAN DAMA HW">
+                    <div class="atropos my-atropos">
+                        <div class="atropos-scale">
+                            <div class="atropos-rotate">
+                                <div class="atropos-inner">
+                                    <article class="product-card">
+                                        <div class="card-glow"></div>
+                                        <div class="image-container" data-atropos-offset="0">
+                                            <div class="product-image">
+                                                <img src="imgs/muestras/parka_dama.png" alt="PARKA ARRAYAN DAMA HW" data-atropos-offset="5">
+                                            </div>
+                                            <div class="image-overlay" data-atropos-offset="2"></div>
+                                        </div>
+                                        <div class="card-content" data-atropos-offset="3">
+                                            <h3 class="product-title">PARKA ARRAYAN DAMA HW</h3>
+                                        </div>
+                                    </article>
+                                </div>
                             </div>
-                            <div class="image-overlay"></div>
                         </div>
-                        <div class="card-content">
-                            <h3 class="product-title">PARKA ARRAYAN DAMA HW</h3>
-                        </div>
-                    </article>
+                    </div>
         
-                    <article class="product-card">
-                        <div class="card-glow"></div>
-                        <div class="image-container">
-                            <div class="product-image">
-                                <img src="imgs/muestras/parka_siberia.png" alt="Parka Siberia HW">
+                    <div class="atropos my-atropos">
+                        <div class="atropos-scale">
+                            <div class="atropos-rotate">
+                                <div class="atropos-inner">
+                                    <article class="product-card">
+                                        <div class="card-glow"></div>
+                                        <div class="image-container" data-atropos-offset="0">
+                                            <div class="product-image">
+                                                <img src="imgs/muestras/parka_siberia.png" alt="Parka Siberia HW" data-atropos-offset="5">
+                                            </div>
+                                            <div class="image-overlay" data-atropos-offset="2"></div>
+                                        </div>
+                                        <div class="card-content" data-atropos-offset="3">
+                                            <h3 class="product-title">PARKA SIBERIA HW</h3>
+                                        </div>
+                                    </article>
+                                </div>
                             </div>
-                            <div class="image-overlay"></div>
                         </div>
-                        <div class="card-content">
-                            <h3 class="product-title">PARKA SIBERIA HW</h3>
-                        </div>
-                    </article>
+                    </div>
         
-                    <article class="product-card">
-                        <div class="card-glow"></div>
-                        <div class="image-container">
-                            <div class="product-image">
-                                <img src="imgs/muestras/pantalon_wolverine.png" alt="PANTALON WOLVERINE HW">
+                    <div class="atropos my-atropos">
+                        <div class="atropos-scale">
+                            <div class="atropos-rotate">
+                                <div class="atropos-inner">
+                                    <article class="product-card">
+                                        <div class="card-glow"></div>
+                                        <div class="image-container" data-atropos-offset="0">
+                                            <div class="product-image">
+                                                <img src="imgs/muestras/pantalon_wolverine.png" alt="PANTALON WOLVERINE HW" data-atropos-offset="5">
+                                            </div>
+                                            <div class="image-overlay" data-atropos-offset="2"></div>
+                                        </div>
+                                        <div class="card-content" data-atropos-offset="3">
+                                            <h3 class="product-title">PANTALON WOLVERINE HW</h3>
+                                        </div>
+                                    </article>
+                                </div>
                             </div>
-                            <div class="image-overlay"></div>
                         </div>
-                        <div class="card-content">
-                            <h3 class="product-title">PANTALON WOLVERINE HW</h3>
-                        </div>
-                    </article>
+                    </div>
         
-                    <article class="product-card">
-                        <div class="card-glow"></div>
-                        <div class="image-container">
-                            <div class="product-image">
-                                <img src="imgs/muestras/chaqueta_inst.png" alt="SOFTSHELL THELMU INSTITUCIONAL">
+                    <div class="atropos my-atropos">
+                        <div class="atropos-scale">
+                            <div class="atropos-rotate">
+                                <div class="atropos-inner">
+                                    <article class="product-card">
+                                        <div class="card-glow"></div>
+                                        <div class="image-container" data-atropos-offset="0">
+                                            <div class="product-image">
+                                                <img src="imgs/muestras/chaqueta_inst.png" alt="SOFTSHELL THELMU INSTITUCIONAL" data-atropos-offset="5">
+                                            </div>
+                                            <div class="image-overlay" data-atropos-offset="2"></div>
+                                        </div>
+                                        <div class="card-content" data-atropos-offset="3">
+                                            <h3 class="product-title">SOFTSHELL THELMU INSTITUCIONAL</h3>
+                                        </div>
+                                    </article>
+                                </div>
                             </div>
-                            <div class="image-overlay"></div>
                         </div>
-                        <div class="card-content">
-                            <h3 class="product-title">SOFTSHELL THELMU INSTITUCIONAL</h3>
-                        </div>
-                    </article>
+                    </div>
         
-                    <article class="product-card">
-                        <div class="card-glow"></div>
-                        <div class="image-container">
-                            <div class="product-image">
-                                <img src="imgs/muestras/zapatos_ps.png" alt="ZAPATOS DE SEGURIDAD">
+                    <div class="atropos my-atropos">
+                        <div class="atropos-scale">
+                            <div class="atropos-rotate">
+                                <div class="atropos-inner">
+                                    <article class="product-card">
+                                        <div class="card-glow"></div>
+                                        <div class="image-container" data-atropos-offset="0">
+                                            <div class="product-image">
+                                                <img src="imgs/muestras/zapatos_ps.png" alt="ZAPATOS DE SEGURIDAD" data-atropos-offset="5">
+                                            </div>
+                                            <div class="image-overlay" data-atropos-offset="2"></div>
+                                        </div>
+                                        <div class="card-content" data-atropos-offset="3">
+                                            <h3 class="product-title">ZAPATOS DE SEGURIDAD</h3>
+                                        </div>
+                                    </article>
+                                </div>
                             </div>
-                            <div class="image-overlay"></div>
                         </div>
-                        <div class="card-content">
-                            <h3 class="product-title">ZAPATOS DE SEGURIDAD</h3>
-                        </div>
-                    </article>
+                    </div>
         
                 </div>
             </div>
@@ -269,9 +324,9 @@
             
             <div class="footer-column">
                 <a href="index.html" class="footer-logo">
-                    <img src="imgs/logo_puertosur.png" alt="PuertoSur Logo">
+                    <img src="imgs/logo_white_full.png" alt="PuertoSur Logo">
                 </a>
-                <p class="footer-tagline">Confección y bordado de alta calidad para tu empresa.</p>
+                <p class="footer-tagline">Comercial puerto sur es una empresa dedicada a entregar soluciones en el área de vestuario corporativo y/o uniformes de trabajo, nacemos para entregar eficiencia y eficacia en la fabricación de vestuario laboral.</p>
             </div>
             
             <div class="footer-column">
@@ -307,6 +362,8 @@
             <p>2025 &copy; Todos los derechos Reservados &copy; Informaticones</p>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/atropos@2.0.2/atropos.min.js"></script>
 
 
 
