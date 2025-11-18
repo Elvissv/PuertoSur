@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import OpenAI from "openai";
 import nodemailer from "nodemailer";
 import fs from "fs";
+import path from "path"; // <-- ¡NUEVO! Para manejar rutas de archivos
+import { fileURLToPath } from "url"; // <-- Para manejar rutas de módulos ES
 
 dotenv.config();
 
@@ -11,12 +13,76 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// ===================================
+//  CONFIGURACIÓN EJS Y ARCHIVOS ESTÁTICOS (¡NUEVO!)
+// ===================================
+
+// Configura EJS (el motor de plantillas)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views")); // Le dice a EJS que busque en la carpeta /server/views/
+
+// Sirve archivos estáticos (CSS, JS, Imágenes)
+// Le dice a Express que la carpeta raíz (un nivel "arriba" de /server) es pública
+// Ahora, /styles/global.css será una ruta válida.
+app.use(express.static(path.join(__dirname, ".."))); 
+
+// ===================================
+// RUTAS DE PÁGINAS WEB (¡NUEVO!)
+// (Estas le dicen al servidor qué página EJS mostrar)
+// ===================================
+
+// Ruta para la página de Inicio (ej. http://localhost:5000/)
+app.get("/", (req, res) => {
+  // Busca y "renderiza" el archivo /server/views/index.ejs
+  res.render("index"); 
+});
+
+// Rutas para las páginas en /navegador_nav/ (ej. http://localhost:5000/somos)
+app.get("/somos", (req, res) => {
+  res.render("navegador_nav/somos");
+});
+app.get("/contacto", (req, res) => {
+  res.render("navegador_nav/contacto");
+});
+app.get("/cotizar", (req, res) => {
+  res.render("navegador_nav/cotizar");
+});
+app.get("/productos", (req, res) => {
+  res.render("navegador_nav/productos");
+});
+app.get("/servicios", (req, res) => {
+  res.render("navegador_nav/servicios");
+});
+
+// Ruta dinámica para todas las páginas de detalle de producto
+// (ej. http://localhost:5000/productos/zapatos/botin_hw)
+app.get("/productos/:categoria/:producto", (req, res) => {
+  const { categoria, producto } = req.params;
+  try {
+    // Intenta renderizar el archivo, ej: /views/navegador_nav/categorias_productos/zapatos/botin_hw.ejs
+    res.render(
+      `navegador_nav/categorias_productos/${categoria}/${producto}`
+    );
+  } catch (error) {
+    console.error("Error al renderizar producto:", error);
+    res.status(404).send("Producto no encontrado");
+  }
+});
+
+
+// ===================================
+// 🔹 RUTAS DE API (Tu código existente)
+// (No se ha cambiado nada aquí)
+// ===================================
+
 // 🔹 Inicializar cliente OpenAI
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
 
-// 🔹 Configurar transporte de correo (para enviar las cotizaciones)
+// 🔹 Configurar transporte de correo
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -28,7 +94,6 @@ const transporter = nodemailer.createTransport({
 // 🔹 Endpoint del chatbot (respuestas IA)
 app.post("/chat", async (req, res) => {
   const { message } = req.body;
-
   try {
     const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
@@ -41,7 +106,6 @@ app.post("/chat", async (req, res) => {
         { role: "user", content: message },
       ],
     });
-
     const reply = completion.choices[0].message.content;
     res.json({ reply });
   } catch (error) {
@@ -55,22 +119,16 @@ app.post("/chat", async (req, res) => {
 // 🔹 Endpoint para guardar y enviar cotizaciones por correo
 app.post("/send-quote", async (req, res) => {
   const quote = req.body;
-  const filePath = "./cotizaciones.json"; // ✅ Corregido (ya no crea /server/server)
-
-  // Leer archivo existente o crear uno nuevo
+  const filePath = "./cotizaciones.json"; 
   let data = [];
   if (fs.existsSync(filePath)) {
     data = JSON.parse(fs.readFileSync(filePath, "utf8"));
   }
-
-  // Agregar nueva cotización con fecha
   data.push({ ...quote, fecha: new Date().toLocaleString("es-CL") });
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
-
-  // Crear contenido del correo
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_USER, // Se envía a la empresa
+    to: process.env.EMAIL_USER, 
     subject: "📩 Nueva Cotización - Puerto Sur",
     text: `
 Se ha recibido una nueva solicitud de cotización:
@@ -86,7 +144,6 @@ Se ha recibido una nueva solicitud de cotización:
 Por favor, revisa esta solicitud y contacta al cliente a la brevedad.
     `,
   };
-
   try {
     await transporter.sendMail(mailOptions);
     console.log("✅ Cotización enviada por correo:", quote);
@@ -97,10 +154,9 @@ Por favor, revisa esta solicitud y contacta al cliente a la brevedad.
   }
 });
 
+
 // 🔹 Puerto del servidor
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
-  console.log(`✅ Servidor del chatbot activo en puerto ${PORT}`)
+  console.log(`✅ Servidor de Puerto Sur (Web y Chatbot) activo en puerto ${PORT}`)
 );
-
-

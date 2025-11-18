@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') %>
+    <title>Contacto - Puerto Sur</title>
+    <link rel="stylesheet" href="/styles/contactanos.css">
+</head>
+<body>
+    
+    <%- include('../partials/header') %>
+
+    <main>
+        <section class="contact-page-container">
+            
+            <h2>Visítanos en Nuestro Local</h2>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d95650.27218289569!2d-73.06998431257794!3d-41.481060296711725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x96183bc144d53bbf%3A0x212702e9d073f9e!2sCOMERCIAL%20PUERTO%20SUR!3m2!1d-41.4810897!2d-72.9875835!4m5!1s0x96183bc144d53bbf%3A0x212702e9d073f9e!2sAv.%20Los%20Notros%201238%2C%205550000%20Puerto%20Montt%2C%20Los%20Lagos!3m2!1d-41.4810897!2d-72.9875835!5e0!3m2!1ses!2scl!4v1763136686617!5m2!1ses!2scl" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <h2>Contáctanos</h2>
+            <p>Puedes comunicarte con nosotros por la vía que prefieras.</p>
+            
+            <div class="contact-buttons-container">
+                <a href="mailto:contacto@comercialpuertosur.cl" class="email-button" target="_blank">
+                    <img src="/imgs/icons/email.png" alt="Email Icon">
+                    Correo Electrónico
+                </a>
+                <a href="https://wa.me/56999959329" class="whatsapp-button" target="_blank">
+                    <img src="/imgs/icons/wsp.png" alt="WhatsApp Icon">
+                    Vía WhatsApp
+                </a>
+                <a href="tel:+56999959329" class="phone-button" target="_blank">
+                    <img src="/imgs/icons/phone.png" alt="Phone Icon">
+                    Llamada Telefónica
+                </a>
+            </div>
+
+        </section>
+    </main>
+
+    <%- include('../partials/footer') %>
+
+    <%- include('../partials/scripts') %>
+
+</body>
+</html>

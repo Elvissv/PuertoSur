@@ -6,94 +6,94 @@ document.addEventListener("DOMContentLoaded", function() {
     const currentPagePath = window.location.pathname;
     const relativePath = currentPagePath.substring(currentPagePath.lastIndexOf('/') + 1) || "index.html";
 
+    // ===================================
+    // 1. LÓGICA GLOBAL DEL HEADER
+    // ===================================
 
-    // --- 1. LÓGICA DEL NUEVO HEADER (Dropdown y Búsqueda) ---
-    const dropdownButton = document.getElementById('dropdownButton');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-    const dropdownArrow = document.getElementById('dropdownArrow');
+    // --- Lógica del Menú Móvil ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileOverlay = document.getElementById('mobile-overlay');
 
-    if (dropdownButton && dropdownMenu && dropdownArrow) {
-        dropdownButton.addEventListener('click', (e) => {
-            e.stopPropagation(); 
-            dropdownMenu.classList.toggle('open');
-            dropdownArrow.classList.toggle('open');
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!dropdownButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                dropdownMenu.classList.remove('open');
-                dropdownArrow.classList.remove('open');
-            }
-        });
+    // Función para abrir el menú
+    function openMobileMenu() {
+        if (mobileMenu) mobileMenu.classList.add('active');
+        if (mobileOverlay) mobileOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Evita scroll del fondo
     }
 
-    const searchInput = document.getElementById('searchInput');
-
-    if (searchInput) {
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const searchTerm = searchInput.value.trim();
-                if (searchTerm) {
-                    console.log('Buscando:', searchTerm);
-                }
-            }
-        });
+    // Función para cerrar el menú
+    function closeMobileMenu() {
+        if (mobileMenu) mobileMenu.classList.remove('active');
+        if (mobileOverlay) mobileOverlay.classList.remove('active');
+        document.body.style.overflow = ''; // Restaura scroll
     }
 
-    // --- 2. LÓGICA PARA MARCAR EL ENLACE ACTIVO ---
-    if (relativePath === "index.html") {
-        const sections = document.querySelectorAll("section[id]");
+    // Asignar eventos
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+    }
+    
+    if (closeMenuBtn) {
+        closeMenuBtn.addEventListener('click', closeMobileMenu);
+    }
+    
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', closeMobileMenu);
+    }
 
-        if (sections.length > 0) {
-            const observerOptions = {
-                rootMargin: "-150px 0px -50% 0px"
-            };
+    // --- Lógica de Búsqueda (Desktop y Móvil) ---
+    const searchInputDesktop = document.getElementById('search-input');
+    const searchInputMobile = document.getElementById('mobile-search-input');
 
-            const sectionObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const currentSectionId = entry.target.id;
-                        navLinks.forEach(link => {
-                            link.classList.remove("active");
-                            const linkHref = link.getAttribute("href");
-                            if (currentSectionId === "welcome" && linkHref === "index.html") {
-                                link.classList.add("active");
-                            }
-                            else if (linkHref === `index.html#${currentSectionId}`) {
-                                link.classList.add("active");
-                            }
-                        });
-                    }
-                });
-            }, observerOptions);
-            sections.forEach(section => sectionObserver.observe(section));
+    function handleSearch(event) {
+        if (event.key === 'Enter') {
+            const searchTerm = event.target.value.trim();
+            if (searchTerm) {
+                console.log('Buscando (desktop):', searchTerm);
+                // window.location.href = '/buscar?q=' + encodeURIComponent(searchTerm);
+            }
         }
     }
-    else {
-        navLinks.forEach(link => {
-            link.classList.remove("active");
-            if (link.getAttribute("href").endsWith(relativePath)) {
-                link.classList.add("active");
+
+    function handleSearchMobile(event) {
+        if (event.key === 'Enter') {
+            const searchTerm = event.target.value.trim();
+            if (searchTerm) {
+                console.log('Buscando (móvil):', searchTerm);
+                // window.location.href = '/buscar?q=' + encodeURIComponent(searchTerm);
+                closeMobileMenu(); // Cierra el menú después de buscar
             }
-        });
+        }
     }
 
-    // --- 3. LÓGICA DEL CARRUSEL DE BIENVENIDA ---
+    if (searchInputDesktop) {
+        searchInputDesktop.addEventListener('keypress', handleSearch);
+    }
+
+    if (searchInputMobile) {
+        searchInputMobile.addEventListener('keypress', handleSearchMobile);
+    }
+
+    // ===================================
+    // 3. LÓGICA ESPECÍFICA DEL INDEX (Carrusel Bienvenida)
+    // ===================================
     const welcomeCarousel = document.getElementById('welcome');
-    if (currentPagePath.endsWith("index.html") || currentPagePath.endsWith("/")) {
+    
+    if ((currentPagePath.endsWith("index.html") || currentPagePath.endsWith("/")) && welcomeCarousel) {
 
-        const slides = welcomeCarousel ? welcomeCarousel.querySelectorAll('.carousel-slide') : [];
-        const prevButton = welcomeCarousel ? welcomeCarousel.querySelector('.carousel-btn.prev') : null;
-        const nextButton = welcomeCarousel ? welcomeCarousel.querySelector('.carousel-btn.next') : null;
+        const slides = welcomeCarousel.querySelectorAll('.carousel-slide');
+        const prevButton = welcomeCarousel.querySelector('.carousel-btn.prev');
+        const nextButton = welcomeCarousel.querySelector('.carousel-btn.next');
 
-        if (welcomeCarousel && slides.length > 1 && prevButton && nextButton) {
+        if (slides.length > 1 && prevButton && nextButton) {
             let currentIndex = 0;
             let slideInterval = null;
 
             function showSlide(index) {
                 slides.forEach((slide, i) => {
                     slide.classList.toggle('active', i === index);
-                    // Corrección: Revisa si el elemento es un VIDEO antes de pausar/reproducir
                     const mediaElement = slide.querySelector('video');
                     if (mediaElement) {
                         if (i === index) {
@@ -150,30 +150,22 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // --- LÓGICA DEL MENÚ DE HAMBURGUESA ---
-    const menuButton = document.getElementById('mobileMenuToggle');
-    const navGroup = document.getElementById('navGrouping');
+    // ===================================
+    // 4. LÓGICA ESPECÍFICA DEL INDEX (Tarjetas 3D Atropos)
+    // ===================================
     
-    if (menuButton && navGroup) {
-        menuButton.addEventListener('click', () => {
-            navGroup.classList.toggle('is-open');
-            menuButton.classList.toggle('is-active');
+    const atroposCards = document.querySelectorAll('.my-atropos');
+    
+    if (atroposCards.length > 0) {
+        // Inicializa Atropos en cada tarjeta
+        atroposCards.forEach((el) => {
+            Atropos({
+                el: el,
+                activeOffset: 40,
+                shadow: true,
+                shadowScale: 1.05,
+            });
         });
     }
 
-    // ===================================
-    // LÓGICA 4: ATROPOS 3D (¡NUEVO!)
-    // ===================================
-    // Busca todos los contenedores con la clase .my-atropos
-    document.querySelectorAll('.my-atropos').forEach((el) => {
-        // Inicializa Atropos en cada uno
-        Atropos({
-            el: el,
-            activeOffset: 40,
-            shadow: true,
-            shadowScale: 1.05,
-        });
-    });
-
-}); // <-- ¡AQUÍ ESTÁ LA CORRECCIÓN! (Cambiado de ');' a '});')
-    // (La '}' extra del final fue eliminada)
+}); // <-- FIN DEL DOMCONTENTLOADED (¡LLAVE EXTRA ELIMINADA!)

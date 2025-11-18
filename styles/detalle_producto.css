@@ -1,4 +1,6 @@
-/* styles/detalle_producto.css */
+/* ========================
+   ESTILOS PÁGINA DETALLE DE PRODUCTO
+========================= */
 
 /* Fondo general de la página de detalle */
 body.product-detail-page {
@@ -35,7 +37,7 @@ body.product-detail-page {
 
 .main-image {
     width: 100%;
-    height: 500px; /* Hice la imagen un poco más alta */
+    height: 500px;
     background: #ffffff;
     border: 1px solid #eee;
     border-radius: 12px;
@@ -49,7 +51,7 @@ body.product-detail-page {
 .main-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Para que se vea el zapato completo */
+    object-fit: contain;
     padding: 20px;
 }
 
@@ -132,6 +134,7 @@ body.product-detail-page {
     color: #005fe4;
 }
 
+/* (Regla combinada) */
 .price-tag {
     font-size: 2rem;
     font-weight: 800;
@@ -156,19 +159,15 @@ body.product-detail-page {
     color: #155724;
 }
 
-/* ========================
-   NUEVOS ESTILOS
-========================= */
-
-/* --- Estilos para el Precio (Faltaba) --- */
-.price-tag {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #005fe4;
-    margin: 10px 0;
+/* --- Título de Sección (Talla, Color, etc.) --- */
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 10px;
 }
 
-/* --- Sección de Personalización (Nuevo) --- */
+/* --- Sección de Personalización (Botones Falsos) --- */
 .customization-section {
     display: flex;
     flex-direction: column;
@@ -181,12 +180,10 @@ body.product-detail-page {
     flex-wrap: wrap;
 }
 
-/* Oculta el radio button real */
 .custom-radio input {
     display: none;
 }
 
-/* Estilo del label (el botón falso) */
 .custom-radio label {
     display: inline-block;
     padding: 0.75rem 1.5rem;
@@ -199,20 +196,18 @@ body.product-detail-page {
     font-size: 0.95rem;
 }
 
-/* Estilo cuando el radio button está seleccionado */
 .custom-radio input:checked + label {
     background: #005fe4;
     color: white;
     border-color: #005fe4;
 }
 
-/* Estilo hover (solo si no está seleccionado) */
 .custom-radio input:not(:checked) + label:hover {
     border-color: #005fe4;
     transform: translateY(-2px);
 }
 
-/* --- Sección de Color (Faltaba) --- */
+/* --- Sección de Color (Círculos) (Regla combinada) --- */
 .color-section {
     display: flex;
     flex-direction: column;
@@ -244,14 +239,7 @@ body.product-detail-page {
     box-shadow: 0 0 0 2px white, 0 0 0 4px #1a1a1a;
 }
 
-/* --- Selectores (Talla / Color) --- */
-.section-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 10px;
-}
-
+/* --- Sección de Talla (Botones) (Regla combinada) --- */
 .size-options {
     display: flex;
     gap: 0.75rem;
@@ -300,11 +288,11 @@ body.product-detail-page {
     color: white;
 }
 
-/* Botón Cotizar */
+/* --- Botón Cotizar (Regla combinada) --- */
 .action-btn {
     margin-top: 20px;
     padding: 15px 30px;
-    background-color: #25D366; /* Color WhatsApp */
+    background-color: #005fe4; /* <-- Color Azul Puerto Sur */
     color: white;
     border: none;
     border-radius: 50px;
@@ -318,11 +306,11 @@ body.product-detail-page {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 95, 228, 0.3); /* Sombra azul */
 }
 
 .action-btn:hover {
-    background-color: #1fa851;
+    background-color: #004ab8; /* <-- Azul oscuro */
     transform: translateY(-3px);
 }
 
@@ -365,7 +353,7 @@ body.product-detail-page {
     color: #666;
 }
 
-/* Responsive */
+/* --- Responsive --- */
 @media (max-width: 768px) {
     .product-layout {
         grid-template-columns: 1fr;

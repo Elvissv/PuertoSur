@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../../../partials/head') %> 
+    <title>Caja de guantes de nitrilo - Puerto Sur</title>
+    <link rel="stylesheet" href="/styles/detalle_producto.css">
+</head>
+
+<body class="product-detail-page"> 
+
+    <%- include('../../../partials/header') %>
+    
+    <div class="product-container">
+       <div class="product-layout">
+        
+        <div class="gallery-section">
+             <div class="main-image" id="mainImage">
+                <img src="/imgs/prod/guantes-nitrilo-celestes.webp" alt="Guantes nitrilo Vista" >
+             </div>
+             <div class="thumbnail-container">
+                <div class="thumbnail active">
+                    <img src="/imgs/prod/guantes-nitrilo.jpg" alt="Guantes de nitrilo Vista 1">
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+             
+             <div class="sku-section">
+                <span class="sku-label">SKU:</span> 
+                <span id="skuCode">(ej: 29813324)</span>
+             </div>
+
+             <h1 class="product-title" id="productTitle">Caja de Guantes nitrilo Celestes 50 Unidades </h1>
+             
+             <p class="product-description" id="productDescription"> </p>
+             
+             <div class="price-tag">$11.990</div>
+
+             <div>
+                <span class="availability-badge available" id="availabilityBadge"> ✓ Disponible </span>
+             </div>
+             
+             <div class="stock-info">
+                Stock disponible: <strong id="stockQuantity">120</strong> unidades
+             </div>
+
+             <div class="color-section">
+                <h3 class="section-title">Color</h3>
+                <div class="color-options">
+                   <div class="color-option selected" data-color="Negro" style="background: #000000;"></div>
+                   <div class="color-option" data-color="Blanco" style="background: #FFFFFF; border: 1px solid #ddd"></div>
+                   <div class="color-option" data-color="Rojo" style="background: #449eff;"></div>
+                </div>
+             </div>
+
+             <a href="/cotizar" class="action-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> <span>Solicitar Cotización</span>
+             </a>
+
+        </div>
+       </div>
+    </div>
+    
+    <%- include('../../../partials/footer') %> 
+    
+    <%- include('../../../partials/scripts') %>
+    
+    <script src="/javaScripts/detalle_producto.js" defer></script>
+
+</body>
+</html>

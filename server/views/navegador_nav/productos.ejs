@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../partials/head') %> <title>Productos - Puerto Sur</title>
+    <link rel="stylesheet" href="/styles/productos.css">
+</head>
+
+
+<body>
+
+    <%- include('../partials/header') %>
+
+    <main>
+        <section class="products-page-container">
+            
+            <h2>Nuestros Productos</h2>
+            
+            <nav class="product-categories">
+                <button class="category-btn active" data-target="poleras">Poleras</button>
+                <button class="category-btn" data-target="parkas">Parkas</button>
+                <button class="category-btn" data-target="pantalon">Pantalón</button>
+                <button class="category-btn" data-target="termico">Térmico</button>
+                <button class="category-btn" data-target="camisa">Camisa/Blusa</button>
+                <button class="category-btn" data-target="mascarillas">Proteccion Personal</button>
+                <button class="category-btn" data-target="chef">Ropa Chef</button>
+                <button class="category-btn" data-target="zapatos">Zapatos</button>
+                <button class="category-btn" data-target="confecciones">Confecciones</button>
+            </nav>
+
+            <div class="categories-container">
+                <div id="poleras" class="category-content active">
+                    <div class="product-grid">
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/polera_pique_mc.png" alt="Polera Pique MC">
+                            <div class="product-card-content">
+                                <h3>Polera Pique M/C</h3>
+                                <p class="price">$11.990</p>
+                                <a href="/productos/poleras/polera_corta" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/polera_pique_ml.png" alt="Polera Piqué ML">
+                            <div class="product-card-content">
+                                <h3>Polera Piqué M/L</h3>
+                                <p class="price">$11.990</p>
+                                <a href="/productos/poleras/polera_larga" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="parkas" class="category-content">
+                    <div class="product-grid">
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/parka_hh_hagg.png" alt="Parka H/H HAGG">
+                            <div class="product-card-content">
+                                <h3>Parka H/H HAGG</h3>
+                                <p class="price">$108.990</p>
+                                <a href="/productos/parkas/parka_hagg" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/parka_reno_hw_3en1.png" alt="Parka Reno HW 3 en 1">
+                            <div class="product-card-content">
+                                <h3>Parka Reno HW 3 en 1</h3>
+                                <p class="price">$78.990</p>
+                                <a href="/productos/parkas/parka_reno" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="pantalon" class="category-content">
+                    <div class="product-grid">
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/jeans_varon.png" alt="Jeans Varon">
+                            <div class="product-card-content">
+                                <h3>Jeans Varon</h3>
+                                <p class="price">$8.990</p>
+                                <a href="/productos/pantalon/jeans" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/pantalon_wolverine.png" alt="Pantalón Cargo">
+                            <div class="product-card-content">
+                                <h3>Pantalón Wolverine</h3>
+                                <p class="price">$42.990</p>
+                                <a href="/productos/pantalon/pantalon_wolverine" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="termico" class="category-content">
+                    <div class="product-grid">
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/jardinera_siberia.png" alt="jardinera siberica">
+                            <div class="product-card-content">
+                                <h3>Jardinera Siberia</h3>
+                                <p class="price">$47.990</p>
+                                <a href="/productos/termico/jardinera_siberia" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/jardinera_termica.png" alt="Jardinera Térmica">
+                            <div class="product-card-content">
+                                <h3>Jardinera Termica</h3>
+                                <p class="price">$17.990</p>
+                                <a href="/productos/termico/jardinera_termica" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/primera_capa.png" alt="Primera Capa">
+                            <div class="product-card-content">
+                                <h3>Segunda capa</h3>
+                                <p class="price">$11.990</p>
+                                <a href="/productos/termico/segunda_capa" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/camiseta_termica.png" alt="Camiseta Térmica">
+                            <div class="product-card-content">
+                                <h3>Camiseta Termica</h3>
+                                <p class="price">$8.590</p>
+                                <a href="/productos/termico/camiseta_termica" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/calcetin_hard_work.png" alt="Calcetines Hard Work">
+                            <div class="product-card-content">
+                                <h3>Calcetin Térmico</h3>
+                                <p class="price">$5.990</p>
+                                <a href="/productos/termico/calcetin_termico" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="camisa" class="category-content">
+                    <div class="product-grid">
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/camisa_oxford_mc.png" alt="Camisa Oxford">
+                            <div class="product-card-content">
+                                <h3>Camisa Manga Corta Oxford - Unisex </h3>
+                                <p class="price">$11.990</p>
+                                <a href="/productos/camisas/camisa_oxford" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/camisa-ml-hombre-oxford.jpg" alt="">
+                            <div class="product-card-content">
+                                <h3>Camisa Manga Larga Oxford - Hombre</h3>
+                                <p class="price"> $11.990</p>
+                                <a href="/productos/camisas/camisa-oxford-ml-hombre" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/blusa-oxford-mujer.jpg" alt="Blusa - Oxford Mujer">
+                            <div class="product-card-content">
+                                <h3>Blusa Oxford Manga Larga - Mujer</h3>
+                                <p class="price">$11.990</p>
+                                <a href="/productos/camisas/blusa-oxford-ml-mujer" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="mascarillas" class="category-content">
+                    <div class="product-grid">
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/mascarillas.jpg" alt="Mascarillas 50 uni">
+                            <div class="product-card-content">
+                                <h3>Caja de Mascarillas 50 unidades </h3>
+                                <p class="price">$10.990</p>
+                                <a href="/productos/equipos-pp/mascarillas" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/guantes-nitrilo-celestes.webp" alt="Guantes celestes Nitrilo">
+                            <div class="product-card-content">
+                                <h3>Mandil Chef</h3>
+                                <p class="price">$6.990</p>
+                                <a href="/productos/equipos-pp/guantes_nitrilo" class="view-more-btn">Ver más+</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="chef" class="category-content">
+                    <div class="product-grid">
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/pantalon_chef - Editado.png" alt="Pantalón Chef">
+                            <div class="product-card-content">
+                                <h3>Pantalón Chef</h3>
+                                <p class="price">$10.990</p>
+                                <a href="/productos/ropa_chef/pantalon_chef" class="view-more-btn">Ver opciones</a>
+                            </div>
+                        </div>
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/mandil_chef.png" alt="Mandil Chef">
+                            <div class="product-card-content">
+                                <h3>Mandil Chef</h3>
+                                <p class="price">$6.990</p>
+                                <a href="/productos/ropa_chef/mandil_chef" class="view-more-btn">Ver más+</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="zapatos" class="category-content">
+                    <div class="product-grid">
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/botin_low_hw.png" alt="Botin HW">
+                            <div class="product-card-content">
+                                <h3>Zapatos HW LOW</h3>
+                                <p class="price">$69.990</p>
+                                <a href="/productos/zapatos/botin_low" class="view-more-btn">Ver más+</a>
+                            </div>
+                        </div>
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/botin_hw.png" alt="botin_hw_low ">
+                            <div class="product-card-content">
+                                <h3>Zapatos HW</h3>
+                                <p class="price">$69.990</p>
+                                <a href="/productos/zapatos/botin_hw" class="view-more-btn">Ver más+</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="confecciones" class="category-content">
+                    <div class="product-grid">
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/slack_confeccion.png" alt="Slax Confecciones">
+                            <div class="product-card-content">
+                                <h3>Slack Confeccion</h3>
+                                <p class="price">$22.990</p>
+                                <a href="#" class="view-more-btn">Ver más+</a>
+                            </div>
+                        </div>
+                        <div class="product-card-item">
+                            <img src="/imgs/prod/traje_termico.png" alt="Traje Térmico">
+                            <div class="product-card-content">
+                                <h3>Traje Termico</h3>
+                                <p class="price">$110.000</p>
+                                <a href="#" class="view-more-btn">Ver más+</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <%- include('../partials/footer') %> 
+    <%- include('../partials/scripts') %>
+    
+    <script src="/javaScripts/productos.js" defer></script>
+</body>
+</html>

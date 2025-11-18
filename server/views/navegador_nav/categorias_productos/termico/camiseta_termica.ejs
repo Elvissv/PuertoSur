@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('../../../partials/head') %> 
+    <title>Camiseta Térmica - Puerto Sur</title>
+    <link rel="stylesheet" href="/styles/detalle_producto.css">
+</head>
+
+<body class="product-detail-page"> 
+
+    <%- include('../../../partials/header') %>
+    
+    <div class="product-container">
+       <div class="product-layout">
+        
+        <div class="gallery-section">
+             <div class="main-image" id="mainImage">
+                <img src="/imgs/prod/camiseta_termica.png" alt="Camiseta Térmica">
+             </div>
+             <div class="thumbnail-container">
+                <div class="thumbnail active">
+                    <img src="/imgs/prod/camiseta_termica.png" alt="Camiseta Térmica Vista 1">
+                </div>
+                </div>
+        </div>
+
+        <div class="info-section">
+             
+             <div class="sku-section">
+                <span class="sku-label">SKU:</span> 
+                <span id="skuCode">TER-CAM-004</span>
+             </div>
+
+             <h1 class="product-title" id="productTitle">Camiseta Térmica</h1>
+             
+             <p class="product-description" id="productDescription">Camiseta térmica de manga larga. Tejido suave y elástico que se ajusta al cuerpo para máxima retención de calor.</p>
+             
+             <div class="price-tag">$8.590</div>
+
+             <div>
+                <span class="availability-badge available" id="availabilityBadge"> ✓ Disponible </span>
+             </div>
+             
+             <div class="stock-info">
+                Stock disponible: <strong id="stockQuantity">180</strong> unidades
+             </div>
+             
+             <div class="size-section">
+                <h3 class="section-title">Talla</h3>
+                <button class="size-guide-btn" id="sizeGuideBtn">📏 Ver Guía de Tallas</button>
+             </div>
+             
+             <div class="customization-section">
+                <h3 class="section-title">Personalización (Opcional)</h3>
+                <div class="customization-options">
+                    <span class="custom-radio">
+                        <input type="radio" id="opcion1" name="customization" value="bordado">
+                        <label for="opcion1">Bordado</label>
+                    </span>
+                    <span class="custom-radio">
+                        <input type="radio" id="opcion2" name="customization" value="estampado">
+                        <label for="opcion2">Estampado</label>
+                    </span>
+                    <span class="custom-radio">
+                        <input type="radio" id="opcion3" name="customization" value="ambos">
+                        <label for="opcion3">Ambos</label>
+                    </span>
+                    <span class="custom-radio">
+                        <input type="radio" id="opcion0" name="customization" value="ninguno" checked>
+                        <label for="opcion0">Sin Personalizar</label>
+                    </span>
+                </div>
+             </div>
+
+             <div class="color-section">
+                <h3 class="section-title">Color</h3>
+                <div class="color-options">
+                   <div class="color-option selected" data-color="Negro" style="background: #1a1a1a;"></div>
+                </div>
+             </div>
+
+             <a href="/cotizar" class="action-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i> <span>Solicitar Cotización</span>
+             </a>
+
+        </div>
+       </div>
+    </div>
+
+    <div class="modal" id="sizeGuideModal">
+       <div class="modal-content">
+            <button class="modal-close" id="closeModal">×</button>
+            <h2 class="section-title">Guía de Tallas (Ropa)</h2>
+            <div class="size-guide-image">
+                <img src="/imgs/prod/tallas/talla_ropa.png" alt="Guía de tallas de Ropa" style="max-width: 80%; max-height: 80%; display: block; object-fit: contain;">
+            </div>
+       </div>
+    </div>
+    
+    <%- include('../../../partials/footer') %> 
+    
+    <%- include('../../../partials/scripts') %>
+    
+    <script src="/javaScripts/detalle_producto.js" defer></script>
+
+</body>
+</html>

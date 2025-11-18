@@ -60,7 +60,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #000000;
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
@@ -87,14 +87,14 @@
 }
 
 /* --- Colores Específicos --- */
-.whatsapp-button { background-color: #25D366; }
-.whatsapp-button:hover { background-color: #128C7E; }
+.whatsapp-button { background-color: #9adbff; }
+.whatsapp-button:hover { background-color: #ffffff; }
 
-.email-button { background-color: #74d7e0; }
-.email-button:hover { background-color: #B23121; }
+.email-button { background-color: #9adbff; }
+.email-button:hover { background-color: #ffffff; }
 
-.phone-button { background-color: #3498db; }
-.phone-button:hover { background-color: #2980b9; }
+.phone-button { background-color: #9adbff; }
+.phone-button:hover { background-color: #ffffff; }
 
 
 /* ========================
