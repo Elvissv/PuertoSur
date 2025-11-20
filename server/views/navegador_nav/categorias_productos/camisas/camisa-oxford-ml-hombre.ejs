@@ -9,6 +9,11 @@
 <body class="product-detail-page"> 
 
     <%- include('../../../partials/header') %>
+    <%- include('../../../partials/breadcrumbs', { 
+        category: 'Camisas', 
+        categoryLink: '/productos#camisa', 
+        currentPage: 'Camisa Oxford M/L' 
+    }) %>
     
     <div class="product-container">
        <div class="product-layout">

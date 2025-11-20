@@ -2,13 +2,18 @@
 <html lang="es">
 <head>
     <%- include('../../../partials/head') %> 
-    <title>Camisa Oxfor manga corta - Puerto Sur</title>
+    <title>Blusa Oxford Mujer manga larga - Puerto Sur</title>
     <link rel="stylesheet" href="/styles/detalle_producto.css">
 </head>
 
 <body class="product-detail-page"> 
 
     <%- include('../../../partials/header') %>
+    <%- include('../../../partials/breadcrumbs', { 
+        category: 'Camisas', 
+        categoryLink: '/productos#camisa', 
+        currentPage: 'Blusa Oxford M/L Mujer' 
+    }) %>
     
     <div class="product-container">
        <div class="product-layout">

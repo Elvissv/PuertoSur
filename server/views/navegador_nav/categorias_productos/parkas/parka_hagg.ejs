@@ -9,6 +9,11 @@
 <body class="product-detail-page"> 
 
     <%- include('../../../partials/header') %>
+    <%- include('../../../partials/breadcrumbs', { 
+        category: 'Parkas', 
+        categoryLink: '/productos#parkas', 
+        currentPage: 'Parka Helly Hansen HAGG' 
+    }) %>
     
     <div class="product-container">
        <div class="product-layout">

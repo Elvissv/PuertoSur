@@ -168,4 +168,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    
+
 }); // <-- FIN DEL DOMCONTENTLOADED (¡LLAVE EXTRA ELIMINADA!)

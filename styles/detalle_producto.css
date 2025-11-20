@@ -12,7 +12,7 @@ body.product-detail-page {
 
 /* Contenedor Principal */
 .product-container {
-    max-width: 1200px;
+    max-width: 1400px;
     width: 100%;
     margin: 40px auto;
     background: white;
@@ -288,11 +288,11 @@ body.product-detail-page {
     color: white;
 }
 
-/* --- Botón Cotizar (Regla combinada) --- */
+/* --- Botón Cotizar --- */
 .action-btn {
     margin-top: 20px;
     padding: 15px 30px;
-    background-color: #005fe4; /* <-- Color Azul Puerto Sur */
+    background-color: #0082CA; /* <-- Color Azul Puerto Sur */
     color: white;
     border: none;
     border-radius: 50px;

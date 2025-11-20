@@ -9,6 +9,12 @@
 <body class="product-detail-page"> 
 
     <%- include('../../../partials/header') %>
+
+    <%- include('../../../partials/breadcrumbs', { 
+        category: 'Zapatos', 
+        categoryLink: '/productos#zapatos', 
+        currentPage: 'Botin Low HW' 
+    }) %>
     
     <div class="product-container">
        <div class="product-layout">

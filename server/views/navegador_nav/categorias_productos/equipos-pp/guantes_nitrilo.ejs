@@ -9,6 +9,11 @@
 <body class="product-detail-page"> 
 
     <%- include('../../../partials/header') %>
+    <%- include('../../../partials/breadcrumbs', { 
+        category: 'Proteccion Personal', 
+        categoryLink: '/productos#mascarillas', 
+        currentPage: 'Guantes de nitrilo' 
+    }) %>
     
     <div class="product-container">
        <div class="product-layout">

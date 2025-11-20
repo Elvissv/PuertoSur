@@ -8,6 +8,10 @@
 <body>
     
     <%- include('../partials/header') %>
+    <%- include('../partials/breadcrumbs', { 
+        isMainPage: true, 
+        currentPage: 'Contactanos' 
+    }) %>
 
     <main>
         <section class="contact-page-container">

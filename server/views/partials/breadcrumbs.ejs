@@ -1,0 +1,25 @@
+<nav class="breadcrumb-nav" aria-label="Breadcrumb">
+    <div class="breadcrumb-container">
+        <ol class="breadcrumb-list">
+            <li class="breadcrumb-item">
+                <a href="/">Inicio</a>
+            </li>
+            
+            <% if (typeof isMainPage === 'undefined') { %>
+                <li class="breadcrumb-item">
+                    <a href="/productos">Productos</a>
+                </li>
+            <% } %>
+            
+            <% if (typeof category !== 'undefined') { %>
+                <li class="breadcrumb-item">
+                    <a href="<%= categoryLink %>"><%= category %></a>
+                </li>
+            <% } %>
+            
+            <li class="breadcrumb-item active" aria-current="page">
+                <%= currentPage %>
+            </li>
+        </ol>
+    </div>
+</nav>

@@ -8,6 +8,10 @@
 <body>
 
     <%- include('../partials/header') %>
+    <%- include('../partials/breadcrumbs', { 
+        isMainPage: true, 
+        currentPage: 'Cotización' 
+    }) %>
 
     <main>
         <section class="cotizar-container">
