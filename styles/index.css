@@ -415,7 +415,6 @@
         grid-template-columns: 1fr;
         gap: 30px;
     }
-    /* (Se eliminó la regla :hover de Atropos, ya que no aplica en móvil) */
 
     .image-container {
         height: 240px;
