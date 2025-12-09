@@ -66,6 +66,7 @@
 .message {
   margin-bottom: 8px;
   line-height: 1.4;
+  word-wrap: break-word; /* Prevent overflow */
 }
 .message.bot {
   background: #e6f4ff;
@@ -80,6 +81,33 @@
   border-radius: 10px;
   align-self: flex-end;
   text-align: right;
+  margin-left: auto; /* Align user messages to right */
+  max-width: 80%;
+}
+
+/* New Styles for Options/Buttons */
+.chat-options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.chat-option-btn {
+  background: white;
+  border: 1px solid #007bbd;
+  color: #007bbd;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.chat-option-btn:hover {
+  background: #007bbd;
+  color: white;
 }
 
 .chatbot-input-area {
@@ -88,6 +116,11 @@
   padding: 8px;
   background: white;
 }
+/* Utility class to hide input area when not needed */
+.hidden {
+  display: none !important;
+}
+
 .chatbot-input-area input {
   flex-grow: 1;
   padding: 8px;
