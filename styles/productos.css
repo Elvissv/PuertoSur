@@ -53,7 +53,6 @@
     border: none;
     background: transparent;
     color: rgba(255, 255, 255, 0.9);
-    /* Blanco ligeramente suave */
     font-size: 0.95rem;
     font-weight: 500;
     border-radius: 8px;
@@ -242,6 +241,10 @@
     /* Botón Toggle Visible */
     .mobile-category-toggle {
         display: flex;
+    }
+
+    .sidebar-title {
+        color: #0082CA;
     }
 
     /* Sidebar Oculto por Defecto en Móvil y Estilo Desplegable */
