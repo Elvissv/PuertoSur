@@ -15,7 +15,7 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: #333;
     line-height: 1.6;
-    background-color: #f8f9fa; 
+    background-color: #f8f9fa;
 }
 
 section {
@@ -24,10 +24,21 @@ section {
     margin: 0 auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+@media (max-width: 768px) {
+    section {
+        padding: 40px 15px;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-bottom: 15px;
     font-weight: 700;
-    color: #1a202c; 
+    color: #1a202c;
 }
 
 /* ========================
@@ -45,13 +56,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .new-header-container {
-    max-width: 80rem; /* 1280px */
+    max-width: 80rem;
+    /* 1280px */
     margin: 0 auto;
     padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 7rem; /* 80px */
+    height: 7rem;
+    /* 80px */
 }
 
 /* --- Logo --- */
@@ -59,42 +72,51 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
 }
+
 .header-logo-link {
     flex-shrink: 0;
     display: flex;
     align-items: center;
     text-decoration: none;
 }
+
 .header-logo-img {
     height: 4.8rem;
     width: auto;
-    margin-right: 0.75rem; 
+    margin-right: 0.75rem;
 }
+
 .header-logo-text {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #1f2937; 
+    color: #1f2937;
 }
 
 /* --- Navegación Escritorio --- */
 .desktop-nav {
-    display: none; /* Oculto en móvil */
+    display: none;
+    /* Oculto en móvil */
     align-items: center;
-    justify-content: center; /* Centra los links */
-    flex: 1; /* Ocupa el espacio central */
-    gap: 2rem; /* ¡ESPACIO ENTRE LINKS! */
+    justify-content: center;
+    /* Centra los links */
+    flex: 1;
+    /* Ocupa el espacio central */
+    gap: 2rem;
+    /* ¡ESPACIO ENTRE LINKS! */
 }
 
 .nav-link {
-    color: #374151; 
+    color: #374151;
     font-weight: 500;
     text-decoration: none;
     position: relative;
     transition: all 0.3s ease;
 }
+
 .nav-link:hover {
-    color: #2563eb; 
+    color: #2563eb;
 }
+
 .nav-link::after {
     content: '';
     position: absolute;
@@ -106,21 +128,25 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease;
     transform: translateX(-50%);
 }
+
 .nav-link:hover::after {
     width: 100%;
 }
 
 /* --- Acciones Escritorio --- */
 .desktop-actions {
-    display: none; /* Oculto en móvil */
+    display: none;
+    /* Oculto en móvil */
     align-items: center;
-    gap: 1rem; /* ¡ESPACIO ENTRE BUSCADOR Y BOTÓN! */
+    gap: 1rem;
+    /* ¡ESPACIO ENTRE BUSCADOR Y BOTÓN! */
 }
 
 /* Barra de Búsqueda */
 .search-container {
     position: relative;
 }
+
 .search-icon-wrapper {
     position: absolute;
     top: 0;
@@ -131,14 +157,16 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     pointer-events: none;
 }
+
 .search-icon {
-    height: 1.25rem; 
-    width: 1.25rem; 
-    color: #9ca3af; 
+    height: 1.25rem;
+    width: 1.25rem;
+    color: #9ca3af;
 }
+
 .search-input {
     display: block;
-    width: 13rem; 
+    width: 13rem;
     padding-left: 2.5rem;
     padding-right: 0.75rem;
     padding-top: 0.5rem;
@@ -149,9 +177,11 @@ h1, h2, h3, h4, h5, h6 {
     background: #ffffff;
     font-size: 0.875rem;
 }
+
 .search-input::placeholder {
     color: #6b7280;
 }
+
 .search-input:focus {
     outline: none;
     box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
@@ -171,6 +201,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
     text-decoration: none;
 }
+
 .catalog-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
@@ -178,17 +209,21 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- Botón Menú Móvil --- */
 .mobile-menu-button-wrapper {
-    display: block; /* Visible en móvil por defecto */
+    display: block;
+    /* Visible en móvil por defecto */
 }
+
 .mobile-menu-button {
     color: #374151;
     background: none;
     border: none;
     cursor: pointer;
 }
+
 .mobile-menu-button:hover {
     color: #2563eb;
 }
+
 .mobile-menu-button .h-6 {
     width: 24px;
     height: 24px;
@@ -202,15 +237,19 @@ h1, h2, h3, h4, h5, h6 {
     bottom: 0;
     left: 0;
     z-index: 50;
-    width: 16rem; /* 256px */
+    width: 16rem;
+    /* 256px */
     background: #ffffff;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
 }
-.mobile-menu.active { /* 'active' es la clase que usa tu JS */
+
+.mobile-menu.active {
+    /* 'active' es la clase que usa tu JS */
     transform: translateX(0);
 }
+
 .mobile-menu-header {
     display: flex;
     align-items: center;
@@ -218,23 +257,28 @@ h1, h2, h3, h4, h5, h6 {
     padding: 1rem;
     border-bottom: 1px solid #e5e7eb;
 }
+
 .mobile-menu-title {
     font-size: 1.25rem;
     font-weight: bold;
     color: #1f2937;
 }
+
 .mobile-menu-close {
     color: #6b7280;
     background: none;
     border: none;
     cursor: pointer;
 }
+
 .mobile-menu-close:hover {
     color: #1f2937;
 }
+
 .mobile-nav-links {
     padding: 1rem;
 }
+
 .mobile-nav-link {
     display: block;
     color: #374151;
@@ -242,9 +286,11 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.5rem 0;
     text-decoration: none;
 }
+
 .mobile-nav-link:hover {
     color: #2563eb;
 }
+
 .mobile-actions {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
@@ -253,17 +299,20 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     gap: 1rem;
 }
+
 .mobile-actions .catalog-btn {
     width: 100%;
     text-align: center;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
 }
+
 .mobile-actions .search-container {
     width: 100%;
 }
+
 .mobile-overlay {
-    display: block; 
+    display: block;
     position: fixed;
     top: 0;
     right: 0;
@@ -275,7 +324,9 @@ h1, h2, h3, h4, h5, h6 {
     visibility: hidden;
     transition: all 0.3s ease;
 }
-.mobile-overlay.active { /* 'active' es la clase que usa tu JS */
+
+.mobile-overlay.active {
+    /* 'active' es la clase que usa tu JS */
     opacity: 1;
     visibility: visible;
 }
@@ -290,61 +341,74 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 40px;
     max-width: none;
 }
+
 .footer-container-grid {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr; 
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 30px;
 }
+
 .footer-column {
     min-width: 150px;
 }
+
 .footer-logo img {
     height: 80px;
     margin-bottom: 15px;
 }
+
 .footer-tagline {
     font-size: 0.9rem;
     color: #ffffff;
     line-height: 1.6;
     margin: 0;
 }
+
 .footer-column h4 {
     font-size: 1.3rem;
     font-weight: 600;
     color: #ffffff;
     margin-bottom: 20px;
 }
+
 .footer-links {
     list-style: none;
     padding: 0;
     margin: 0;
 }
+
 .footer-links li {
     margin-bottom: 12px;
 }
+
 .footer-links a {
     text-decoration: none;
     color: #ffffff;
     font-size: 0.95rem;
     transition: color 0.3s ease;
 }
+
 .footer-links a:hover {
     color: #a1bfff;
     text-decoration: underline;
 }
+
 .footer-social-icons {
     display: flex;
     gap: 15px;
 }
+
 .footer-social-icons a {
     display: inline-block;
     transition: transform 0.3s ease;
 }
+
 .footer-social-icons a:hover {
     transform: scale(1.15);
 }
+
 .footer-social-icons img {
     width: 32px;
     height: 32px;
@@ -357,6 +421,7 @@ h1, h2, h3, h4, h5, h6 {
     border-top: 1px solid #006eb0;
     text-align: center;
 }
+
 .footer-bottom-bar p {
     margin: 0;
     font-size: 0.9rem;
@@ -367,16 +432,19 @@ h1, h2, h3, h4, h5, h6 {
    ESTILOS DE MIGAS DE PAN (BREADCRUMBS)
 ========================= */
 .breadcrumb-nav {
-    background-color: #f8f9fa; /* Fondo gris muy suave */
+    background-color: #f8f9fa;
+    /* Fondo gris muy suave */
     border-bottom: 1px solid #0055ff;
     padding: 1rem 0;
-    margin-bottom: 0rem; /* Espacio antes del producto */
+    margin-bottom: 0rem;
+    /* Espacio antes del producto */
 }
 
 .breadcrumb-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 5rem; /* Alineado con tu header */
+    padding: 0 5rem;
+    /* Alineado con tu header */
 }
 
 .breadcrumb-list {
@@ -389,20 +457,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .breadcrumb-item {
-    color: #6b7280; /* Gris medio */
+    color: #6b7280;
+    /* Gris medio */
     display: flex;
     align-items: center;
 }
 
 .breadcrumb-item a {
-    color: #374151; /* Gris oscuro */
+    color: #374151;
+    /* Gris oscuro */
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
 }
 
 .breadcrumb-item a:hover {
-    color: #005fe4; /* Tu azul corporativo */
+    color: #005fe4;
+    /* Tu azul corporativo */
     text-decoration: underline;
 }
 
@@ -410,12 +481,14 @@ h1, h2, h3, h4, h5, h6 {
 .breadcrumb-item:not(:last-child)::after {
     content: '/';
     margin: 0 0.75rem;
-    color: #9ca3af; /* Gris claro */
+    color: #9ca3af;
+    /* Gris claro */
 }
 
 /* El último elemento (página actual) */
 .breadcrumb-item.active {
-    color: #005fe4; /* Azul corporativo */
+    color: #005fe4;
+    /* Azul corporativo */
     font-weight: 600;
 }
 
@@ -424,35 +497,69 @@ h1, h2, h3, h4, h5, h6 {
 ========================= */
 
 /* --- Escritorio (1024px y más) --- */
-@media (min-width: 1024px) { 
+@media (min-width: 1024px) {
     .desktop-nav {
-        display: flex; 
+        display: flex;
     }
+
     .desktop-actions {
-        display: flex; 
+        display: flex;
     }
+
     .mobile-menu-button-wrapper {
-        display: none; 
+        display: none;
     }
 }
 
 /* --- Tablet (Footer) --- */
 @media (max-width: 992px) {
     .footer-container-grid {
-        grid-template-columns: 1fr 1fr; 
+        grid-template-columns: 1fr 1fr;
     }
 }
 
 /* --- Móvil (Header) --- */
 @media (max-width: 768px) {
-     .new-header {
-        padding: 1rem;
-     }
+    .new-header {
+        padding: 0;
+    }
+
+    .new-header-container {
+        height: 4rem;
+        /* 64px - Más compacto en móvil */
+        padding: 0 1rem;
+    }
+
+    .header-logo-img {
+        height: 3rem;
+        /* Logo más pequeño */
+    }
+
+    .header-logo-text {
+        font-size: 1.2rem;
+    }
 }
 
-/* --- Móvil Pequeño (Footer) --- */
+/* --- Móvil Pequeño (Footer y otros) --- */
 @media (max-width: 600px) {
     .footer-container-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
+        gap: 40px;
+        /* Más espacio entre secciones apiladas */
+        text-align: center;
+    }
+
+    .footer-logo img {
+        margin: 0 auto 15px;
+        display: block;
+    }
+
+    .footer-social-icons {
+        justify-content: center;
+    }
+
+    .breadcrumb-container {
+        padding: 0 1rem;
+        /* Ajuste para breadcrumbs */
     }
 }
