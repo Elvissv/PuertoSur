@@ -4,7 +4,8 @@
 
 .contact-page-container {
     max-width: 900px;
-    margin: 0 auto; /* Centra el contenedor */
+    margin: 0 auto;
+    /* Centra el contenedor */
     text-align: center;
     padding-top: 40px;
     padding-bottom: 60px;
@@ -25,9 +26,9 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding-top: 56.25%; 
+    padding-top: 56.25%;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     margin-bottom: 50px;
 }
 
@@ -46,11 +47,13 @@
 
 .contact-buttons-container {
     margin-top: 20px;
-    display: flex; 
-    flex-wrap: wrap; /* Permite que se envuelvan si no caben */
-    justify-content: center; /* Centra los botones */
-    align-items: center; 
-    gap: 15px; 
+    display: flex;
+    flex-wrap: wrap;
+    /* Permite que se envuelvan si no caben */
+    justify-content: center;
+    /* Centra los botones */
+    align-items: center;
+    gap: 15px;
 }
 
 /* --- Estilo base de botón --- */
@@ -60,15 +63,15 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #000000;
+    color: rgb(100, 100, 100);
     font-size: 1.2rem;
     font-weight: 600;
     text-decoration: none;
     padding: 15px 30px;
     border-radius: 50px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    min-width: 300px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    min-width: 300px;
 }
 
 .whatsapp-button img,
@@ -83,18 +86,33 @@
 .email-button:hover,
 .phone-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* --- Colores Específicos --- */
-.whatsapp-button { background-color: #9adbff; }
-.whatsapp-button:hover { background-color: #ffffff; }
+.whatsapp-button {
+    background-color: #9adbff;
+}
 
-.email-button { background-color: #9adbff; }
-.email-button:hover { background-color: #ffffff; }
+.whatsapp-button:hover {
+    background-color: #ffffff;
+}
 
-.phone-button { background-color: #9adbff; }
-.phone-button:hover { background-color: #ffffff; }
+.email-button {
+    background-color: #9adbff;
+}
+
+.email-button:hover {
+    background-color: #ffffff;
+}
+
+.phone-button {
+    background-color: #9adbff;
+}
+
+.phone-button:hover {
+    background-color: #ffffff;
+}
 
 
 /* ========================
@@ -102,16 +120,21 @@
 ========================= */
 
 @media (max-width: 992px) {
+
     /* En pantallas medianas, permite que se apilen si no caben */
     .contact-buttons-container {
         flex-direction: column;
         align-items: center;
     }
+
     .whatsapp-button,
     .email-button,
     .phone-button {
-        width: 100%; /* Ocupan todo el ancho del contenedor */
-        max-width: 400px; /* Un ancho máximo razonable */
-        min-width: unset; /* Quitamos el ancho mínimo */
+        width: 100%;
+        /* Ocupan todo el ancho del contenedor */
+        max-width: 400px;
+        /* Un ancho máximo razonable */
+        min-width: unset;
+        /* Quitamos el ancho mínimo */
     }
 }

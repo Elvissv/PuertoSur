@@ -63,44 +63,82 @@
 }
 
 /* ========================
-   SECCIÓN TRABAJOS RECIENTES
+   SECCIÓN TRABAJOS RECIENTES (DISEÑO PREMIUM)
 ========================= */
 #trabajos-recientes {
     width: 100%;
-    padding: 60px 0;
-    background-color: #f8f9fa;
+    padding: 100px 0;
+    /* Fondo sutil y elegante */
+    background: radial-gradient(circle at top center, #f8f9fa 0%, #e9ecef 100%);
     max-width: none;
     overflow: hidden;
+    position: relative;
+}
+
+/* Efecto decorativo de fondo */
+#trabajos-recientes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
 }
 
 .trabajos-container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1600px;
+    /* Más ancho para dar aire */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 50px;
 }
 
 .trabajos-title {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 900;
     text-align: center;
-    color: #2c3e50;
+    color: #1a202c;
     margin: 0;
     padding: 0 20px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    align-self: center;
+    background: linear-gradient(135deg, #1a202c 0%, #4a5568 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.trabajos-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 6px;
+    background: #166fe5;
+    /* Color de acento */
+    margin: 20px auto 0;
+    border-radius: 3px;
+    box-shadow: 0 4px 10px rgba(22, 111, 229, 0.3);
 }
 
 .carousel-wrapper {
     width: 100%;
     overflow: hidden;
-    position: relative;
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    padding: 20px 0;
+    /* Espacio para las sombras */
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
 }
 
 .carousel-track {
     display: flex;
-    gap: 20px;
+    gap: 30px;
+    /* Mayor separación */
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
@@ -109,47 +147,71 @@
     animation-play-state: paused;
 }
 
+/* TARJETA MODERNA */
 .carousel-item {
     flex-shrink: 0;
-    width: 280px;
-    /* Ancho de cada tarjeta */
-    height: 200px;
-    /* Alto de cada tarjeta */
-    border-radius: 40px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    height: 240px;
+    /* Un poco más grandes */
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Sombra suave y difusa */
     overflow: hidden;
-    background-color: #acbcff;
+    background-color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    cursor: pointer;
+}
+
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+    /* Borde interno sutil */
+    pointer-events: none;
 }
 
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    padding: 10px;
-    transition: transform 0.3s ease;
+    object-fit: cover;
+    /* Asegura que la imagen llene la tarjeta */
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* EFECTOS HOVER */
+.carousel-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    /* Sombra más fuerte al levantar */
+    z-index: 10;
 }
 
 .carousel-item:hover img {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    /* Zoom suave */
 }
 
 /* --- Animaciones del Carrusel (CORREGIDAS) --- */
 
 #track-top,
 #track-bottom {
-    /* (10 imágenes * (300px ancho + 20px gap)) * 2 sets = 6400px */
-    width: 6400px;
+    /* (10 imágenes * (320px ancho + 30px gap)) * 2 sets = 7000px */
+    width: 7000px;
 }
 
 #track-top {
     animation-name: scroll-to-left;
-    animation-duration: 75s;
-    /* Más largo para 10 items */
+    animation-duration: 80s;
+    /* Ajustado para la nueva longitud */
 }
 
 #track-bottom {
     animation-name: scroll-to-right;
-    animation-duration: 75s;
+    animation-duration: 80s;
 }
 
 @keyframes scroll-to-left {
@@ -574,10 +636,22 @@
         height: 180px;
     }
 
+    #track-top,
+    #track-bottom {
+        /* (10 * (250 + 30)) * 2 = 5600px */
+        width: 5600px;
+    }
+
     /* Sección Productos 3D */
     #products .main-title {
         font-size: 36px;
         margin-bottom: 15px;
+    }
+
+    /* Video Bienvenida - Evitar recorte en móviles */
+    .media-background {
+        object-fit: contain;
+        background-color: #ffffff;
     }
 
     #products .subtitle {
@@ -600,8 +674,17 @@
 
     /* Sección Trabajos Recientes */
     .carousel-item {
-        width: 200px;
-        height: 150px;
+        width: 220px;
+        /* Reducido para móvil */
+        height: 160px;
+        border-radius: 16px;
+        /* Radio ajustado */
+    }
+
+    #track-top,
+    #track-bottom {
+        /* (10 * (220 + 30)) * 2 = 5000px */
+        width: 5000px;
     }
 
     /* Sección Síguenos */
